@@ -3,28 +3,41 @@
 #include <stdio.h> 
 #include <unistd.h>
 #include <poll.h>
+#include <stdlib.h>
 
 
-void printArg(){
-  printf("arg\n");
+void func(){
+  for(int i=0;i<10;i++)
+  	poll(NULL, 0, 20);
 }
 
 
 int testLl(){
-	thread_libinit(SJF); // FIFO SJF PRIORITY
+	printf("\n\nTesting thread_create() after the scheduler has been activated by thread_join()\n" );
+	printf("thread 1, 2, 3 should finish before 4, 5, 6 \n\n\n" );
+
+
+	thread_libinit(FIFO); // FIFO SJF PRIORITY
 
 	//create
-	int tid1 = thread_create(printArg, NULL, 0);
-	int tid2 = thread_create(printArg, NULL, -1);
+	int tid1 = thread_create(func, NULL, 0);
+	int tid2 = thread_create(func, NULL, -1);
+	int tid3 = thread_create(func, NULL, 1);
 
 
 	// join
 	thread_join(tid1);
 	thread_join(tid2);
-	
-	int tid3 = thread_create(printArg, NULL, 1);
-	
 	thread_join(tid3);
+	
+	int tid4 = thread_create(func, NULL, 1);
+	int tid5 = thread_create(func, NULL, 1);
+	int tid6 = thread_create(func, NULL, 1);
+
+	thread_join(tid4);
+	thread_join(tid5);
+	thread_join(tid6);
+
 
 
 	// term
@@ -36,5 +49,5 @@ int testLl(){
 
 int main(){
   testLl();
-  return 1;
+  exit(EXIT_SUCCESS);
 }

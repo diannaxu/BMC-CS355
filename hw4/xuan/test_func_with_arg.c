@@ -2,7 +2,7 @@
 #include "userthread.h"
 #include <stdio.h> 
 #include <unistd.h>
-#include <poll.h>
+#include <stdlib.h>
 
 typedef struct {int num; char* arg;} PAIR;
 
@@ -18,6 +18,10 @@ void printArg(void* argv){
 
 
 int testLl(){
+	printf("\n\nTesting user functions with arguments\n");
+	printf("Should print the number and string passed in\n\n\n");
+
+
 	thread_libinit(SJF); // FIFO SJF PRIORITY
 
 	PAIR ins, ins2, ins3;
@@ -51,5 +55,5 @@ int testLl(){
 
 int main(){
   testLl();
-  return 1;
+  exit(EXIT_SUCCESS);
 }
