@@ -6,8 +6,7 @@ void testfunc1(){
 }
 
 void testfunc2(){
-  printf("testfun2", i);
-
+  printf("testfun2\n");
 }
 
 
