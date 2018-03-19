@@ -7,7 +7,7 @@
 
 #define N 128
 
-void foo() {
+void foo(void *) {
   poll(NULL, 0, 1);
 }
 

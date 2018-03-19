@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "userthread.h"
 
-void foo_yield() {
+void foo_yield(void *) {
   for (int i = 0; i < 100; i ++)
     thread_yield();
 }
