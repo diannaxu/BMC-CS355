@@ -1,16 +1,20 @@
+#include <poll.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "userthread.h"
 
 void hello_n1(void *arg) {
+  poll(NULL, 0, 100);
   printf("%s -1\n", arg);
 }
 
 void hello_0(void *arg) {
+  poll(NULL, 0, 100);
   printf("%s 0\n", arg);
 }
 
 void hello_1(void *arg) {
+  poll(NULL, 0, 100);
   printf("%s 1\n", arg);
 }
 
