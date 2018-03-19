@@ -6,17 +6,17 @@
 #define THREADS_NUM   10
 
 void hello_n1(void *arg) {
-  poll(NULL, 0, 100);
+  poll(NULL, 0, 200);
   printf("%s -1\n", arg);
 }
 
 void hello_0(void *arg) {
-  poll(NULL, 0, 100);
+  poll(NULL, 0, 200);
   printf("%s 0\n", arg);
 }
 
 void hello_1(void *arg) {
-  poll(NULL, 0, 100);
+  poll(NULL, 0, 200);
   printf("%s 1\n", arg);
 }
 
