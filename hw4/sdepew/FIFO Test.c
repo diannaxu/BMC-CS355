@@ -20,12 +20,20 @@ int main(void) {
     printf("This is a FIFO test where main is tested as a thread.\n");
 
     int tid1 = thread_create(printHello, NULL, PRIORITY);
+
+    if(tid1 == FAILURE)
+        exit(EXIT_FAILURE);
+
     if (thread_join(tid1) == FAILURE)
         exit(EXIT_FAILURE);
 
     printf("Back in Main\n");
 
     int tid2 = thread_create(printHello, NULL, PRIORITY);
+
+    if(tid2 == FAILURE)
+        exit(EXIT_FAILURE);
+
     if (thread_join(tid2) == FAILURE)
         exit(EXIT_FAILURE);
 
