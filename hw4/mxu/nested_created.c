@@ -2,12 +2,19 @@
 #include <stdlib.h>
 #include "userthread.h"
 
+void child(void* nothing) {
+  printf("Ops, I am a child, not thread created.\n");
+
+}
 
 void test(void* trash) {
-  printf("hello, world\n");
+  printf("Ha! We create a new thread!\n");
+  int tid = thread_create(child,NULL,0);
+
+  thread_join(tid);
 }
 /*
-  a very simple basic fifo test.
+  a simple basic fifo test.
   You can also comment all the thread_create and thread_join
   to test whether your thread_libinit and thread_libterminate works
 */
@@ -18,7 +25,7 @@ int main(int args, char** argv) {
   else
     printf("Sad.. I fail\n");
   
-  printf("thread 1 should ends more early than thread 2."); 
+  printf("We should have four threads in total. They should be ended in order 3 -> 4 -> 1 -> 2\n"); 
   int tid1 =  thread_create(test,NULL,0);
   int tid2 =  thread_create(test,NULL,0);
   /*
