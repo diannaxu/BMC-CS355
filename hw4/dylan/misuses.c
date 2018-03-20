@@ -28,7 +28,7 @@ int main(void) {
   	exit(EXIT_FAILURE);
 
   if (thread_join(tid1) == -1)
-  	exit(EXIT_FAILURE);i
+  	exit(EXIT_FAILURE);
 
   if (thread_libterminate() == FAILURE)
     exit(EXIT_FAILURE);
