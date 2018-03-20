@@ -19,7 +19,7 @@ int main(void) {
 
   char *hello_str = "Hello, world!";
   tid_1 = thread_create(hello, hello_str, 0);
-  tid_2 = thread_create(hello, hello_str, 0);
+  tid_2 = thread_create(hello2, hello_str, 0);
 
   printf("Test case for FIFO. 2 threads join each other to create deadlock.\n");
   printf("The program gets stuck and prints nothing on success.\n");
