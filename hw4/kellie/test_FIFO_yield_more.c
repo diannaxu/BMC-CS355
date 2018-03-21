@@ -49,10 +49,15 @@ int main() {
   tid5 = thread_create(&f, "5", 0);
   tid6 = thread_create(&f, "6", 0);
 
-  thread_join(tid);
-  // thread_join(tid2);
+  if (thread_join(tid) != 0) {
+    printf("failuRE\n");
+    return(EXIT_SUCCESS);
+  }
 
-  thread_libterminate();
-  printf("terminated\n");
+  if (thread_libterminate() != 0) {
+    return EXIT_FAILURE;
+  } else {
+    printf("terminated\n");
+  }
   return 0;
 }

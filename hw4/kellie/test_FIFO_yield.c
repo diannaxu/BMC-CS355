@@ -54,7 +54,10 @@ int main() {
   thread_join(tid);
   thread_join(tid2);
 
-  thread_libterminate();
-  printf("terminated\n");
+  if (thread_libterminate() != 0) {
+    return EXIT_FAILURE;
+  } else {
+    printf("terminated\n");
+  }
   return 0;
 }

@@ -43,12 +43,12 @@ int main() {
     return EXIT_FAILURE;
   }
 
-  if (thread_create(tid) != 0) {
+  if (thread_create(f, NULL, 0) != 0) {
     printf("thread_create failure\n");
     return EXIT_FAILURE;
   }
 
-  if (thread_create(tid2) != 0) {
+  if (thread_create(f, NULL, 0) != 0) {
     printf("thread_create failure\n");
     return EXIT_FAILURE;
   }
