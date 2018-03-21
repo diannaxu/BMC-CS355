@@ -18,17 +18,10 @@ terminated
 #include "userthread.h"
 
 void f1() {
-<<<<<<< HEAD
   printf("from f1\n");
 }
 void f2() {
   printf("from f2\n");
-=======
-  printf("\nfrom f1\n\n");
-}
-void f2() {
-  printf("\nfrom f2\n\n");
->>>>>>> a538d54ab92c1e8842aefda7aae493348c4b1a2e
 }
 
 int main() {
