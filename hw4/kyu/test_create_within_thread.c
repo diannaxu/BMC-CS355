@@ -6,8 +6,8 @@
 int idx = 0;
 int created_tids[3] = { -1, -1, -1 };
 
-void foo() {}
-void foo_create() {
+void foo(void *) {}
+void foo_create(void *) {
   created_tids[idx] = thread_create(foo, NULL, 1);
   thread_join(created_tids[idx++]);
 }

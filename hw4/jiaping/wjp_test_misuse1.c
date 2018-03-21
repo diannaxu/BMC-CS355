@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include "userthread.h"
 
-void foo(void *) {}
-void bar(void *) {}
+void foo(void* args) {}
+void bar(void* args) {}
 
 int main(void) {
-  printf(" * Testing a basic FIFO with some misuse of the userthread library\n");
-  printf(" * Shouldn't cause any crash or memory leak! \n");
+  printf("Testing simple misuses\n");
+  printf("Shouldn't cause any crash on success\n");
+  thread_libterminate();
   // the following three should return -1
   if (thread_create(foo, NULL, 0) != -1)
     exit(EXIT_FAILURE);
@@ -16,10 +17,6 @@ int main(void) {
   if (thread_join(1) != -1)
     exit(EXIT_FAILURE);
 
-  // calling |thread_libterminate| before calling |thread_libinit|
-  // can either return 0 or -1... but shouldn't cause any thing weird.
-  thread_libterminate();
-  thread_libterminate();
   if (thread_libinit(FIFO) == -1)
     exit(EXIT_FAILURE);
 
@@ -44,11 +41,11 @@ int main(void) {
   if (thread_libterminate() == -1)
     exit(EXIT_FAILURE);
 
-  printf(" * Threads should in this order: %d -> %d -> %d -> %d -> %d -> %d\n",
-         tid1, tid2 ,tid3, tid4, tid5, tid6);
 
   // more misuses...
   thread_libterminate();
   thread_join(123132);
+
+  
   exit(EXIT_SUCCESS);
 }

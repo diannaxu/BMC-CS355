@@ -4,9 +4,9 @@
 
 #define FAILURE -1
 
-void foo() {}
+void foo(void *) {}
 
-void foo_yield() {
+void foo_yield(void *) {
   thread_yield();
 }
 
