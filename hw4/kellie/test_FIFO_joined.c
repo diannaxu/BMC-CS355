@@ -27,15 +27,23 @@ void f2() {
 int main() {
   int tid, tid2;
 
-  thread_libinit(FIFO);
+  if (thread_libinit(FIFO) != 0) {
+    exit(EXIT_FAILURE);
+  }
 
   // create threads with functions f1, f2
   tid = thread_create(f1, NULL, 0);
   tid2 = thread_create(f2, NULL, 0);
 
   // join f2 thread first so it finishes before f1
-  thread_join(tid2);
-  thread_join(tid);
+  if (thread_join(tid2) != 0) {
+    printf("thread_join failure");
+    exit(EXIT_FAILURE);
+  }
+  if (thread_join(tid) != 0) {
+    printf("%s\n", "thread join failure");
+    exit(EXIT_FAILURE);
+  }
 
   thread_libterminate();
   printf("terminated\n");
