@@ -51,11 +51,11 @@ int main() {
 
   if (thread_join(tid) != 0) {
     printf("failuRE\n");
-    return(EXIT_SUCCESS);
+    exit(EXIT_FAILURE);
   }
 
   if (thread_libterminate() != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   } else {
     printf("terminated\n");
   }

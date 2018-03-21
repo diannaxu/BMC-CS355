@@ -29,10 +29,14 @@ void f(void* args) {
 int main() {
   int tids[THREADS];
 
+  if (thread_libinit(SJF) != 0) {
+    exit(EXIT_FAILURE);
+  }
+
   for (int i = 1; i < THREADS; i++) {
     if (thread_join(tids[i]) != 0) {
       printf("thread_join failure\n");
-      return EXIT_FAILURE;
+      exit(EXIT_FAILURE);
     }
   }
 
@@ -40,12 +44,12 @@ int main() {
     tids[i] = thread_create(&f, (void*) (uintptr_t)i, 0);
     if (tids[i] != 0) {
       printf("thread_create failure\n");
-      return EXIT_FAILURE;
+      exit(EXIT_FAILURE);
     }
   }
 
   if (thread_libterminate() != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   } else {
     printf("terminated\n");
   }

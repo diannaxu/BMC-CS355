@@ -30,31 +30,31 @@ int main() {
   int tid, tid2;
 
   if (thread_libinit(SJF) != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   if (thread_join(tid) != 0) {
     printf("thread_join failure\n");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   if (thread_join(tid2) != 0) {
     printf("thread_join failure\n");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   if (thread_create(f, NULL, 0) != 0) {
     printf("thread_create failure\n");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   if (thread_create(f, NULL, 0) != 0) {
     printf("thread_create failure\n");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   if (thread_libterminate() != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   } else {
     printf("terminated\n");
   }

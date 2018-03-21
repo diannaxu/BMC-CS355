@@ -28,7 +28,7 @@ int main() {
   int tid, tid2;
 
   if (thread_libinit(FIFO) != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   // create threads with functions f1, f2
@@ -38,11 +38,11 @@ int main() {
   // join f2 thread first so it finishes before f1
   if (thread_join(tid2) != 0) {
     printf("thread_join failure");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   if (thread_join(tid) != 0) {
     printf("%s\n", "thread join failure");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   thread_libterminate();

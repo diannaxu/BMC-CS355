@@ -33,24 +33,24 @@ int main() {
   int tids[THREADS];
 
   if (thread_libinit(SJF) != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   for (int i = 0; i < THREADS; i++) {
     tids[i] = thread_create(&f, (void*) (uintptr_t)i, 0);
     if (tids[i] == -1) {
-      return EXIT_FAILURE;
+      exit(EXIT_FAILURE);
     }
   }
 
   for (int i = 0; i < THREADS; i++) {
     if (thread_join(tids[i]) == -1) {
-      return EXIT_FAILURE;
+      exit(EXIT_FAILURE);
     }
   }
 
   if (thread_libterminate() != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   } else {
     printf("terminated\n");
   }

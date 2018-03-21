@@ -39,7 +39,7 @@ int main() {
   int tid, tid2, tid3;
 
   if (thread_libinit(SJF) != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   // create threads with function f, number passed into poll()
@@ -52,7 +52,7 @@ int main() {
   }
 
   if (thread_libterminate() != 0) {
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   } else {
     printf("terminated\n");
   }
