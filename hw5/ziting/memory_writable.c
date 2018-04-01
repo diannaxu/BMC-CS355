@@ -16,7 +16,7 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
-  int result = Mem_Init(NUM_ALLOC * 40);
+  int result = Mem_Init(getpagesize());
   assert(result == 0);
 
   int *ptr;
