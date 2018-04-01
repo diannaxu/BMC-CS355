@@ -22,6 +22,7 @@ int main() {
 
   void **ptrs = malloc(sizeof(void*) * NUM_ALLOC);
 
+  printf("--start allocating.\n");
   for (int i = 0; i < NUM_ALLOC; i++) {
     ptrs[i] = Mem_Alloc(SIZE_ALLOC);
     assert(ptrs[i] != NULL);
@@ -30,6 +31,7 @@ int main() {
     Mem_Dump();
   }
 
+  printf("--start freeing.\n");
   for (int i = 0; i < NUM_ALLOC; i++) {
     Mem_Free(ptrs[i], 0);
 
