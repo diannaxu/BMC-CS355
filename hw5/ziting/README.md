@@ -1,1 +1,1 @@
-#Please run ./automated_test.sh
+# Please run ./automated_test.sh
