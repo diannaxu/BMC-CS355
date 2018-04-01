@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 #define NUM_ALLOC 5
-#define BYTE 8
+#define SIZE_ALLOC 24
 
 clock_t begin, end;
 
@@ -23,9 +23,8 @@ int main() {
   void **ptrs = malloc(sizeof(void*) * NUM_ALLOC);
 
   for (int i = 0; i < NUM_ALLOC; i++) {
-    ptrs[i] = Mem_Alloc(BYTE);
+    ptrs[i] = Mem_Alloc(SIZE_ALLOC);
     assert(ptrs[i] != NULL);
-    assert(((long) ptrs[i]) % 8 == 0);
 
     Mem_Dump();
   }
