@@ -44,7 +44,6 @@ int main() {
 
   end = clock();
   print_execution_time(begin, end);
-  free(ptrs);
 
   return EXIT_SUCCESS;
 }
