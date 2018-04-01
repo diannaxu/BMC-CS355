@@ -1,5 +1,6 @@
 #!/bin/sh
-make
+make >> log.txt
+echo "if nothing prints out, then you pass the tests."
 ./mem_init_misuse >> log.txt
 ./simple_8_byte >> log.txt
 ./simple_8_byte_coalesce >> log.txt
