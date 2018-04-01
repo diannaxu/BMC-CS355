@@ -25,7 +25,7 @@ int main() {
   for (int i = 0; i < NUM_ALLOC; i++) {
     ptrs[i] = Mem_Alloc(BYTE);
     assert(ptrs[i] != NULL);
-    assert(ptrs[i] % 8 == 0);
+    assert(((long)ptrs[i]) % 8 == 0);
 
     Mem_Dump();
   }
