@@ -24,11 +24,11 @@ int main() {
 
   printf("--start allocating (assumed the header size is %d bytes).\n", HEADER_SIZE);
   ptr = Mem_Alloc(getpagesize()/2-HEADER_SIZE);
-  ptr2 = Mem_Alloc(getpagesize()/2-HEADER_SIZE);
+  //ptr2 = Mem_Alloc(getpagesize()/2-HEADER_SIZE);
   assert(ptr != NULL);
   assert(((long) ptr) % 8 == 0);
-  assert(ptr2 != NULL);
-  assert(((long) ptr2) % 8 == 0);
+  //assert(ptr2 != NULL);
+  //assert(((long) ptr2) % 8 == 0);
 
   Mem_Dump();
 
@@ -36,8 +36,8 @@ int main() {
   result = Mem_Free(ptr, 0);
   assert(result == 0);
 
-  result = Mem_Free(ptr2, 0);
-  assert(result == 0);
+  //result = Mem_Free(ptr2, 0);
+  //assert(result == 0);
 
   Mem_Dump();
 
