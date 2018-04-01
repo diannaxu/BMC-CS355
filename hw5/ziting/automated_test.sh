@@ -1,6 +1,6 @@
 #!/bin/sh
 make >> log.txt
-echo "if nothing prints out, then you pass the tests."
+echo "If nothing prints out after this line, then you pass the tests. Otherwise check log.txt."
 ./mem_init_misuse >> log.txt
 ./simple_8_byte >> log.txt
 ./simple_8_byte_coalesce >> log.txt
