@@ -17,7 +17,7 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
-  int result = Mem_Init(-NUM_ALLOC * 40);
+  int result = Mem_Init(0);
   assert(result == -1);
 
   void **ptrs = malloc(sizeof(void*) * NUM_ALLOC);

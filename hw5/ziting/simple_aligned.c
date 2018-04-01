@@ -8,6 +8,7 @@
 
 #define NUM_ALLOC 5
 #define SIZE_ALLOC 24
+#define HEADER_SIZE 32
 
 clock_t begin, end;
 
@@ -17,7 +18,7 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
-  int result = Mem_Init(NUM_ALLOC * 40);
+  int result = Mem_Init(NUM_ALLOC * (HEADER_SIZE + SIZE_ALLOC));
   assert(result == 0);
 
   void **ptrs = malloc(sizeof(void*) * NUM_ALLOC);

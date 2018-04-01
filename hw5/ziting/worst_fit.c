@@ -6,7 +6,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-#define HEADER_SIZE 24
+#define HEADER_SIZE 32
 #define BYTE 8
 
 clock_t begin, end;
