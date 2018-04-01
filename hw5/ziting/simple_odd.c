@@ -33,7 +33,8 @@ int main() {
 
   printf("--start freeing.\n");
   for (int i = 0; i < NUM_ALLOC; i++) {
-    Mem_Free(ptrs[i], 0);
+    result = Mem_Free(ptrs[i], 0);
+    assert(result == 0);
 
     Mem_Dump();
   }
