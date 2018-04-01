@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-g -Wall
 
-all: mem_init_misuse simple_8_byte simple_8_byte_coalesce simple_aligned simple_odd mem_init_1_page mem_init_1_page_roundup free_null_pointer memory_writable allocate_all_memory allocate_too_much
+all: mem_init_misuse simple_8_byte simple_8_byte_coalesce simple_aligned simple_odd mem_init_1_page mem_init_1_page_roundup free_null_pointer memory_writable allocate_all_memory allocate_too_much worst_fit
 
 mem_init_misuse: mem_init_misuse.c libmem.so
 	$(CC) $(CFLAGS) mem_init_misuse.c -o mem_init_misuse -L. -lmem
@@ -47,5 +47,9 @@ allocate_too_much: allocate_too_much.c libmem.so
 	$(CC) $(CFLAGS) allocate_too_much.c -o allocate_too_much -L. -lmem
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
 
+worst_fit: worst_fit.c libmem.so
+	$(CC) $(CFLAGS) worst_fit.c -o worst_fit -L. -lmem
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
+
 clean:
-	rm mem_init_misuse simple_8_byte simple_8_byte_coalesce simple_aligned simple_odd mem_init_1_page mem_init_1_page_roundup free_null_pointer memory_writable allocate_all_memory allocate_too_much
+	rm mem_init_misuse simple_8_byte simple_8_byte_coalesce simple_aligned simple_odd mem_init_1_page mem_init_1_page_roundup free_null_pointer memory_writable allocate_all_memory allocate_too_much worst_fit
