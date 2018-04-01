@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 #define NUM_ALLOC 5
-#define SIZE_ALLOC 11
+#define SIZE_ALLOC 3
 
 clock_t begin, end;
 
