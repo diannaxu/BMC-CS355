@@ -35,6 +35,8 @@ int main() {
   result = Mem_Free(0, 0);
   assert(result == 0);
 
+  Mem_Dump();
+
   printf("--start freeing.\n");
   for (int i = 0; i < NUM_ALLOC; i++) {
     result = Mem_Free(ptrs[i], 0);
@@ -46,6 +48,8 @@ int main() {
   printf("--free null pointer with coalescing.\n");
   result = Mem_Free(0, 1);
   assert(result == 0);
+
+  Mem_Dump();
 
   end = clock();
   print_execution_time(begin, end);
