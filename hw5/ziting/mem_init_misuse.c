@@ -32,9 +32,8 @@ int main() {
 
   printf("--start freeing.\n");
   for (int i = 0; i < NUM_ALLOC; i++) {
-    printf("--attempt to free null pointers\n");
     result = Mem_Free(ptrs[i], 0);
-    assert(result == 0);
+    assert(result == -1);
 
     Mem_Dump();
   }
