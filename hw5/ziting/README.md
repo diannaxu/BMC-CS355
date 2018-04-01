@@ -1,0 +1,1 @@
+#Please run ./automated_test.sh
