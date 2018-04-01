@@ -35,6 +35,7 @@ int main() {
   for (int i = 0; i < 3; i++) {
     printf("memory at location %p writable: %d\n", ptr+i, *(ptr+i));
   }
+  printf("\n");
 
   printf("--start freeing.\n");
   result = Mem_Free(ptr, 0);
