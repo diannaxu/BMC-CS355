@@ -34,6 +34,9 @@ int main() {
 
     Mem_Dump();
   }
+
+  Mem_Free(0, 1);
+  Mem_Dump();
   end = clock();
   print_execution_time(begin, end);
   free(ptrs);
