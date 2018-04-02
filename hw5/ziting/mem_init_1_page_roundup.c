@@ -17,7 +17,9 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
-  int result = Mem_Init(NUM_ALLOC*40);
+  printf("./mem_init_1_page_roundup  --------------------------\n");
+
+  int result = Mem_Init(NUM_ALLOC*BYTE);
   assert(result == 0);
 
   void **ptrs = malloc(sizeof(void*) * NUM_ALLOC);

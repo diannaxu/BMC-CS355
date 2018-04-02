@@ -6,7 +6,6 @@
 #include <limits.h>
 #include <unistd.h>
 
-#define HEADER_SIZE 32
 #define BYTE 8
 
 clock_t begin, end;
@@ -17,23 +16,25 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
+  printf("./worst_fit  --------------------------\n");
+
   int result = Mem_Init(getpagesize());
   assert(result == 0);
 
   void *ptr, *ptr2, *ptr3, *ptr4, *ptr5;
 
-  printf("--start allocating (assumed the header size is %d bytes).\n", HEADER_SIZE);
-  ptr = Mem_Alloc(getpagesize()/2-HEADER_SIZE);
+  printf("--start allocating.\n");
+  ptr = Mem_Alloc(getpagesize()/2);
   assert(ptr != NULL);
   assert(((long) ptr) % 8 == 0);
   Mem_Dump();
 
-  ptr2 = Mem_Alloc(getpagesize()/4-HEADER_SIZE);
+  ptr2 = Mem_Alloc(getpagesize()/4);
   assert(ptr2 != NULL);
   assert(((long) ptr2) % 8 == 0);
   Mem_Dump();
 
-  ptr3 = Mem_Alloc(getpagesize()/4-HEADER_SIZE);
+  ptr3 = Mem_Alloc(getpagesize()/4);
   assert(ptr3 != NULL);
   assert(((long) ptr3) % 8 == 0);
   Mem_Dump();
@@ -51,7 +52,7 @@ int main() {
   assert(result == 0);
   Mem_Dump();
 
-  printf("--start allocating (assumed the header size is %d bytes).\n", HEADER_SIZE);
+  printf("--start allocating.\n");
   ptr = Mem_Alloc(600);
   assert(ptr != NULL);
   assert(((long) ptr) % 8 == 0);

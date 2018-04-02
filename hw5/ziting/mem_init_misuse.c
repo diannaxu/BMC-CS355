@@ -17,6 +17,8 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
+  printf("./mem_init_misuse  --------------------------\n");
+
   int result = Mem_Init(0);
   assert(result == -1);
 

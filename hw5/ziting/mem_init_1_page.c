@@ -17,6 +17,8 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
+  printf("./mem_init_1_page  --------------------------\n");
+
   int result = Mem_Init(getpagesize());
   assert(result == 0);
 

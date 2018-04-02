@@ -6,7 +6,6 @@
 #include <limits.h>
 #include <unistd.h>
 
-#define HEADER_SIZE 24
 #define BYTE 8
 
 clock_t begin, end;
@@ -17,18 +16,20 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
+  printf("./allocate_too_much  --------------------------\n");
+  
   int result = Mem_Init(getpagesize());
   assert(result == 0);
 
   void *ptr, *ptr2;
 
-  printf("--start allocating (assumed the header size is %d bytes).\n", HEADER_SIZE);
-  ptr = Mem_Alloc(getpagesize()/2-HEADER_SIZE);
+  printf("--start allocating.\n");
+  ptr = Mem_Alloc(getpagesize()/2);
   assert(ptr != NULL);
   assert(((long) ptr) % 8 == 0);
   Mem_Dump();
 
-  ptr2 = Mem_Alloc(getpagesize()/2-HEADER_SIZE+BYTE);
+  ptr2 = Mem_Alloc(getpagesize()/2+1);
   assert(ptr2 == NULL);
   Mem_Dump();
 

@@ -6,8 +6,6 @@
 #include <limits.h>
 #include <unistd.h>
 
-#define HEADER_SIZE 32
-#define BYTE 8
 
 clock_t begin, end;
 
@@ -17,7 +15,9 @@ static void print_execution_time(clock_t begin, clock_t end) {
 }
 
 int main() {
-  int result = Mem_Init(sizeof(int)*3 + HEADER_SIZE);
+  printf("./memory_writable  --------------------------\n");
+
+  int result = Mem_Init(sizeof(int)*3);
   assert(result == 0);
 
   int *ptr;
