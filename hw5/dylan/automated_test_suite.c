@@ -12,7 +12,7 @@
 #define TRUE 1
 #define FALSE 0
 
-#define NUMBER_UNIT_TESTS 14
+#define NUMBER_UNIT_TESTS 16
 
 // test funcs
 void eight_byte_allignment(void);
@@ -29,6 +29,8 @@ void no_space_left_to_allocate(void);
 void check_memory_can_be_written_to(void);
 void large_alloc_and_free_coalesce(void);
 void kyu_test_two_mil(void);
+void doesnt_break_under_coalese_loop(void);
+void realistic_use_test(void);
 
 void FisherYates(int *array, int n);
 
@@ -46,7 +48,9 @@ void (*test_funcs[NUMBER_UNIT_TESTS])(void) = {
 	check_memory_can_be_written_to,
 	large_alloc_and_free_no_coalesce,
 	large_alloc_and_free_coalesce,
-	kyu_test_two_mil
+	kyu_test_two_mil,
+	doesnt_break_under_coalese_loop,
+	realistic_use_test
 };
 
 char *unit_test_names[NUMBER_UNIT_TESTS] = {
@@ -63,8 +67,9 @@ char *unit_test_names[NUMBER_UNIT_TESTS] = {
 	"large_alloc_and_free_no_coalesce",
 	"large_alloc_and_free_coalesce",
 	"check_memory_can_be_written_to",
-	"kyu_test_two_mil"
-
+	"kyu_test_two_mil",
+	"doesnt_break_under_coalese_loop",
+	"realistic_use_test"
 };
 
 char *error_chars[5] = {
@@ -292,6 +297,10 @@ void misuses(void)
 	if ((test_struct = Mem_Alloc(sizeof(t3))) == NULL)
 		exit(EXIT_FAILURE);
 
+	char *foo = "foo";
+	if (Mem_Free(foo, TRUE) != FAILURE)
+		exit(EXIT_FAILURE);
+
 	// no action occurs on null free, false 
 	if (Mem_Free(NULL, FALSE) == FAILURE)
 		exit(EXIT_FAILURE);
@@ -310,7 +319,7 @@ void worst_fit(void)
 	printf(" * Should see largest block removed from free list throughout dumps...\n");
 
 
-	if (Mem_Init(allocs * 50) == FAILURE) {
+	if (Mem_Init(allocs * getpagesize()) == FAILURE) {
 		fprintf(stderr, "Failure initializing\n");
 		exit(EXIT_FAILURE);
 	}
@@ -697,6 +706,9 @@ void kyu_test_two_mil(void) {
 	int free_freq = 100;
 	int coalesce_freq = 100000;
 
+	printf(" * Running Kyu's coalese test... \n");
+	printf(" * Should produce a running time less than ten seconds... \n");
+
 	clock_t begin = clock();
 
 	int result = Mem_Init(num_alloc * 40);
@@ -719,6 +731,85 @@ void kyu_test_two_mil(void) {
 	free(ptrs);
 	exit(EXIT_SUCCESS);
 }
+
+void doesnt_break_under_coalese_loop(void)
+{
+	if(Mem_Init(50) == FAILURE)
+		exit(EXIT_FAILURE);
+
+	t3 *test = Mem_Alloc(sizeof(t3));
+
+	printf(" * Testing misuses of mem free that shouldn't lead to the program running indefintely\n");
+	printf(" * Should print out free list that contains two elements\n");
+
+	if (test == NULL)
+		exit(EXIT_FAILURE);
+
+	for (int i = 0; i < 5000000; ++i)
+	{
+		if (Mem_Free(NULL, TRUE));
+	}
+
+	Mem_Free(test, FALSE);
+
+	Mem_Dump();
+
+	exit(EXIT_SUCCESS);
+}
+
+void realistic_use_test(void)
+{
+	printf(" * Trying to test how malloc may be used in user program, with many allocs and frees\n");
+	printf(" * in varying orders. \n");
+
+	int num_alloc = 100;
+
+	if(Mem_Init(getpagesize()) == FAILURE)
+		exit(EXIT_FAILURE);
+
+	void **ptrs = malloc(sizeof(void*) * num_alloc);
+
+	for (int i = 0; i < 25; i++)
+	{
+		ptrs[i] = Mem_Alloc(sizeof(t1));
+		if (ptrs[i] == NULL || ((long) ptrs[i]) % 8 != 0)
+			exit(EXIT_FAILURE);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		Mem_Free(ptrs[i], TRUE);
+	}
+
+	printf(" * Should see a dump of two blocks below\n");
+	Mem_Dump();
+
+	for (int i = 0; i < 10; i++)
+	{
+		ptrs[i] = Mem_Alloc(sizeof(t1));
+		if (ptrs[i] == NULL || ((long) ptrs[i]) % 8 != 0)
+			exit(EXIT_FAILURE);
+	}
+
+	printf(" * Should see another dump of two blocks below\n");
+	for (int i = 0; i < 10; i++)
+	{
+		Mem_Free(ptrs[i], TRUE);
+	}
+
+	Mem_Dump();
+
+	for (int i = 100; i < 400; i += 100)
+	{
+		if (Mem_Alloc(i) == NULL)
+			exit(EXIT_FAILURE);
+	}
+
+	free(ptrs);
+	exit(EXIT_SUCCESS);
+}
+
+
 
 /**
  * Main test loop
