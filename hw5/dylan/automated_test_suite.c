@@ -12,14 +12,14 @@
 #define TRUE 1
 #define FALSE 0
 
-#define NUMBER_UNIT_TESTS 13
+#define NUMBER_UNIT_TESTS 14
 
 // test funcs
 void eight_byte_allignment(void);
 void large_alloc_and_free_no_coalesce(void);
 void eight_byte_allocation(void);
-void alligned_allocations(void);
-void odd_sized_allocations(void);
+void aligned(void);
+void odd_sized(void);
 void misuses(void);
 void worst_fit(void);
 void coalesce_free_space(void);
@@ -28,14 +28,15 @@ void round_up_to_page_size(void);
 void no_space_left_to_allocate(void);
 void check_memory_can_be_written_to(void);
 void large_alloc_and_free_coalesce(void);
+void kyu_test_two_mil(void);
 
 void FisherYates(int *array, int n);
 
 void (*test_funcs[NUMBER_UNIT_TESTS])(void) = {
 	eight_byte_allignment,
 	eight_byte_allocation,
-	alligned_allocations,
-	odd_sized_allocations,
+	aligned,
+	odd_sized,
 	misuses,
 	worst_fit,
 	coalesce_free_space,
@@ -44,14 +45,15 @@ void (*test_funcs[NUMBER_UNIT_TESTS])(void) = {
 	no_space_left_to_allocate,
 	check_memory_can_be_written_to,
 	large_alloc_and_free_no_coalesce,
-	large_alloc_and_free_coalesce
+	large_alloc_and_free_coalesce,
+	kyu_test_two_mil
 };
 
 char *unit_test_names[NUMBER_UNIT_TESTS] = {
 	"eight_byte_allignment",
 	"eight_byte_allocation",
-	"alligned_allocations",
-	"odd_sized_allocations",
+	"aligned",
+	"odd_sized",
 	"misuses",
 	"worst_fit",
 	"coalesce_free_space",
@@ -60,7 +62,8 @@ char *unit_test_names[NUMBER_UNIT_TESTS] = {
 	"no_space_left_to_allocate",
 	"large_alloc_and_free_no_coalesce",
 	"large_alloc_and_free_coalesce",
-	"check_memory_can_be_written_to"
+	"check_memory_can_be_written_to",
+	"kyu_test_two_mil"
 
 };
 
@@ -91,6 +94,10 @@ typedef struct t3 {
 	int second;
 	int third;
 } t3;
+
+typedef struct eight_byte_struct {
+	void *pointer;
+} eight_byte_struct;
 
 /**
  * Start eight byte alignment test
@@ -132,6 +139,7 @@ void eight_byte_allignment(void)
 		}
 	}
 
+	free(ptrs);
 	exit(EXIT_SUCCESS);
 }
 
@@ -180,7 +188,7 @@ void eight_byte_allocation(void)
 /**
  * Start Alligned allocations test
  */
-void alligned_allocations(void)
+void aligned(void)
 {
 	int allocs = 5;
 
@@ -197,7 +205,7 @@ void alligned_allocations(void)
 
 	for (int i = 0; i < allocs; ++i)
 	{
-		ptrs[i] = Mem_Alloc(sizeof(t3));
+		ptrs[i] = Mem_Alloc(sizeof(eight_byte_struct));
 
 		if (ptrs[i] == NULL) {
 			fprintf(stderr, "Failure allocating\n");
@@ -223,7 +231,7 @@ void alligned_allocations(void)
 /**
  * Start odd sized allocations test
  */
-void odd_sized_allocations(void)
+void odd_sized(void)
 {
 	int allocs = 5;
 
@@ -231,7 +239,7 @@ void odd_sized_allocations(void)
 	printf(" * On free of aligned allocaitons, should see 6 free blocks of varying sizes\n");
 	printf(" * and all are aligned in memory\n");
 
-	if (Mem_Init(allocs * 50) == FAILURE) {
+	if (Mem_Init(allocs * getpagesize()) == FAILURE) {
 		fprintf(stderr, "Failure initializing\n");
 		exit(EXIT_FAILURE);
 	}
@@ -272,7 +280,7 @@ void misuses(void)
 	if (Mem_Init(0) != FAILURE)
 		exit(EXIT_FAILURE);
 
-	if (Mem_Init(1) == FAILURE)
+	if (Mem_Init(sizeof(t3)) == FAILURE)
 		exit(EXIT_FAILURE);
 
 	if (Mem_Init(1) != FAILURE)
@@ -373,7 +381,7 @@ void coalesce_free_space(void)
 
 	void **ptrs = malloc(sizeof(void *) * allocs);
 
-	for (int i = 0; i < allocs; ++i)
+	for (int i = 0; i < allocs; i++)
 	{
 		ptrs[i] = Mem_Alloc((sizeof(t3)) + 1);
 		if (ptrs[i] == NULL || (long) ptrs[i] % 8 != 0) {
@@ -382,7 +390,7 @@ void coalesce_free_space(void)
 		}
 	}
 
-	for (int i = 1; i < allocs; ++i)
+	for (int i = 1; i < allocs; i++)
 	{
 		if (Mem_Free(ptrs[i], FALSE) == FAILURE) {
 			fprintf(stderr, "Failure freeing\n");
@@ -443,10 +451,17 @@ void no_space_left_to_allocate(void)
 		exit(EXIT_FAILURE);
 	}
 
-	// alloc should fail because there's not enough room for a header
-	if (Mem_Alloc(getpagesize()) == NULL) {
-		printf("Alloc failed on error code %s \n", error_chars[m_error - 1]);
-		exit(EXIT_SUCCESS);
+	// alloc should eventually run out of space
+	// this will vary by initialization policy, however, if it allocs the page size
+	// for the page size, it will fail by every policy
+
+	int i = 0;
+	while (i < getpagesize()) {
+		if (Mem_Alloc(getpagesize()) == NULL) {
+			printf(" * Alloc failed on error code %s \n", error_chars[m_error - 1]);
+			exit(EXIT_SUCCESS);
+		}
+		i++;
 	}
 
 	exit(EXIT_FAILURE);
@@ -578,13 +593,15 @@ void large_alloc_and_free_no_coalesce(void)
 	}
 
 	for (int i = 0; i < allocs/free_freq; ++i)
-	{
 		free(ptrs[free_order[i]]);
-	}
 
 	end_first_test = clock();
 	time_spent = (double)(end_first_test - first_test) / CLOCKS_PER_SEC;
 	printf(" * The same test with malloc took %f seconds...\n", time_spent);
+
+	// free the rest of the pointers
+	for (int i = allocs/free_freq; i < allocs; ++i)
+		free(ptrs[free_order[i]]);
 
 	free(ptrs);
 	free(free_order);
@@ -659,16 +676,47 @@ void large_alloc_and_free_coalesce(void)
 	}
 
 	for (int i = 0; i < allocs/free_freq; ++i)
-	{
 		free(ptrs[free_order[i]]);
-	}
 
 	end_first_test = clock();
 	time_spent = (double)(end_first_test - first_test) / CLOCKS_PER_SEC;
 	printf(" * The same test with malloc took %f seconds...\n", time_spent);
 
+	// free the rest of the pointers
+	for (int i = allocs/free_freq; i < allocs; ++i)
+		free(ptrs[free_order[i]]);
+	
+
 	free(ptrs);
 	free(free_order);
+	exit(EXIT_SUCCESS);
+}
+
+void kyu_test_two_mil(void) {
+	int num_alloc = 2000000;
+	int free_freq = 100;
+	int coalesce_freq = 100000;
+
+	clock_t begin = clock();
+
+	int result = Mem_Init(num_alloc * 40);
+	if (result != 0)
+		exit(EXIT_FAILURE);
+
+	void **ptrs = malloc(sizeof(void*) * num_alloc);
+
+	for (int i = 0; i < num_alloc; i++) {
+		ptrs[i] = Mem_Alloc(sizeof(t1));
+		if (ptrs[i] == NULL)
+			exit(EXIT_FAILURE);
+
+		if (i % free_freq == free_freq - 1)
+		  Mem_Free(ptrs[i-free_freq+1], i % coalesce_freq == 0);
+	}
+
+	clock_t end = clock();
+	printf(" * The test took %f seconds...\n", (double) (end - begin) / CLOCKS_PER_SEC);
+	free(ptrs);
 	exit(EXIT_SUCCESS);
 }
 
