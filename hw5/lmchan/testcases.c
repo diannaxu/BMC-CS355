@@ -15,10 +15,11 @@
 #define PAGE 4096
 
 // helper function to free the pointers from calling malloc
-void free_ptrs(void **ptrs) {
-  for (int i = 0; ptrs[i] != NULL; i++) {
+void free_ptrs(void **ptrs, int size) {
+  for (int i = 0; i < size; i++) {
+    // printf("ptrs[%d] %d\n", i, ptrs[i]);
     printf("freeing all pointers\n");
-    if(Mem_Free(ptrs[i], FALSE) == FAILURE) {
+    if(Mem_Free(ptrs[i], FALSE) == FALSE) {
       printf("mem_free is not working\n");
     }
   }
@@ -49,7 +50,7 @@ int eight_byte_alignment(int alloc) {
     printf("\tshould see 8 byte allocations\n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs, size);
 
     return TRUE;
   }
@@ -78,7 +79,7 @@ int simple_eight_byte() {
     printf("\tshould see 8 byte allocations\n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs, size);
 
     return TRUE;
   }
@@ -110,7 +111,7 @@ int few_aligned_allocations() {
     printf("\tshould see 8 byte allocations\n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs, size);
 
     return TRUE;
   }
@@ -158,7 +159,7 @@ int worsefit_allocation() {
     printf("\tshould see that allocating 20 bytes was placed in the worst fit\n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs, size);
 
     return TRUE;
 
@@ -194,7 +195,7 @@ int coalesce() {
     printf("\tfreeing pointer at index 8 -- CHECK TO SEE IF COALESCE \n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs,size);
     return TRUE;
 
   }
@@ -236,7 +237,7 @@ int no_space_left_to_allocate() {
     printf("\tPRINTING LIST again\n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs, size);
 
     return TRUE;
   }
@@ -277,7 +278,7 @@ int memory_written_after_allocation() {
     printf("\tPRINTING LIST after initial allocation \n");
     Mem_Dump();
 
-    free_ptrs(ptrs);
+    free_ptrs(ptrs,size);
 
     printf("\tPRINTING LIST -- check to see if list is free\n");
     Mem_Dump();
