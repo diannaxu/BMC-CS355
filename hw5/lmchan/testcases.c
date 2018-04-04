@@ -191,7 +191,7 @@ int coalesce() {
     Mem_Dump();
 
     Mem_Free(ptrs[8],TRUE);
-    printf("\tfreeing pointer at index 9 -- CHECK TO SEE IF COALESCE \n");
+    printf("\tfreeing pointer at index 8 -- CHECK TO SEE IF COALESCE \n");
     Mem_Dump();
 
     free_ptrs(ptrs);
