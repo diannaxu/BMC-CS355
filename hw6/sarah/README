@@ -1,0 +1,5 @@
+In the Files_Given folder you can find all of the 17 files from the given fragmented disk image reorganized into actual their actual files. You can compare your output to these files to check the correctness of your defragmenter after tracing the block of what your defragmenter does. 
+
+Note: old0 corresponds to file inode0, etc, if the naming is confusing. 
+
+Thanks! 
