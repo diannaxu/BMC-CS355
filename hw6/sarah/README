@@ -2,4 +2,6 @@ In the Files_Given folder you can find all of the 17 files from the given fragme
 
 Note: old0 corresponds to file inode0, etc, if the naming is confusing. 
 
+Also, datafile-frag-data-sarah is a file that contains my disk image without the boot block, superblock, inode region, or intermediate inodes. In other words, the data is ONLY the reorganized data region that you can compare your work against. 
+
 Thanks! 
