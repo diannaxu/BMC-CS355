@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
     // join threads
     for (int i = 0; i < THREAD_NUM; ++i) {
         if (thread_join(threads[i]) == FAILURE) {
-            printf("create failure\n");
+            printf("join failure\n");
             exit(EXIT_FAILURE);
         }
     }
