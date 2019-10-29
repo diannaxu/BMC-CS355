@@ -1,47 +1,30 @@
 // Author: Yuxiao Wang
-// test FIFO join: create threads 1, 2, 3, 4; main joins all; 1 joins 2; 2 creates 5, then joins 3; 4 joins 1
-// order of printing "I'm thread <#>" should be 3, 5, 2, 1, 4
+// test SJF yield: every other thread yields after sleeping 10 ms; since the estimated runtime
+// will be much less than the default (half of the quantum - 50ms), the same thread will be
+// selected to run immediately
+// order of printing "I'm thread <#>" should be 1, 2, ..., 10
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <poll.h>
 
 #include "userthread.h"
 
-#define THREAD_NUM 4
+#define THREAD_NUM 10
+#define SLEEP_MS 10
 #define FAILURE -1
-
-int threads[THREAD_NUM];
 
 void foo(void* arg) {
     int num = *((int*) arg);
-    if (num == 1) {
-        if (thread_join(threads[1]) == FAILURE) {
-            printf("join failure\n");
-            exit(EXIT_FAILURE);
-        }
-    } else if (num == 2) {
-        int five = 5;
-        if (thread_create(foo, &five, 0) == FAILURE) {
-            printf("create failure\n");
-            exit(EXIT_FAILURE);
-        }
-
-        if (thread_join(threads[2]) == FAILURE) {
-            printf("join failure\n");
-            exit(EXIT_FAILURE);
-        }
-    } else if (num == 4) {
-        if (thread_join(threads[0]) == FAILURE) {
-            printf("join failure\n");
-            exit(EXIT_FAILURE);
-        }
+    poll(NULL, 0, SLEEP_MS);
+    if (num % 2 == 0) {
+        thread_yield();
     }
-
     printf("I'm thread %d\n", num);
 }
 
 int main(int argc, char** argv) {
-    if (thread_libinit(FIFO) == FAILURE) {
+    if (thread_libinit(SJF) == FAILURE) {
         printf("init failure\n");
         exit(EXIT_FAILURE);
     }
@@ -53,6 +36,7 @@ int main(int argc, char** argv) {
     }
 
     // create threads
+    int threads[THREAD_NUM];
     for (int i = 0; i < THREAD_NUM; ++i) {
         threads[i] = thread_create(foo, num + i, 0);
         if (threads[i] == FAILURE) {
