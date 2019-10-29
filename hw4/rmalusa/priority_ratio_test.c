@@ -57,7 +57,7 @@ int main(){
     }			 
   }
   printf("Ratio of low to medium priority threads terminating first: %d:%d\n", low_finished_first, medium_finished_first); 
-  printf("Should be approximately 333/666\n"); 
+  printf("Should be approximately 400/600\n"); 
   status = thread_libterminate();
   if(status == ERROR){
     printf("Error terminating library\n");
