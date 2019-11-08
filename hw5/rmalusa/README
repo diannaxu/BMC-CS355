@@ -1,0 +1,79 @@
+README 
+Test Suite Documentation 
+Author: Ruby Malusa
+
+alignment_test.c
+Tests whether the addresses given to the user are 8-byte aligned, by requesting some blocks of memory that are divisible by 8 and some that are not,
+and printing out the returned addresses.
+Expected behavior: Every address printed ends in either 0 or 8. 
+
+simple_allocation_test.c
+Tests that simple 8-byte allocations are positioned where we expect them, by requesting some 8-byte blocks and printing the returned addresses.  
+Also does a memory dump. 
+Expected behavior: The addresses should be separated by 40/0x28 bytes, 32 for the header and 8 for the allocation. The memory dump should reflect
+the expected positions (32-byte headers followed by 8-byte allocations, bunched together at the start of the available memory).
+
+allocation_test.c
+Tests that some rounded and non-rounded allocations are positioned where we expect them, by requesting blocks of various sizes and printing the
+returned addresses, then doing a memory dump. 
+Expected behavior: The main function itself has more detail on the exact memory allocations and what they should be rounded to, but essentially, 
+we should see allocations that are multiples of 8, separated by 32-byte headers, and still together at the beginning of available memory (as in
+the previous test, we have made few enough requests that they're all just placed in order).
+
+init_test.c
+Tests initializing the memory allocator with valid and invalid arguments: first with a request of -1, then 0, then 10 (valid), then 100 (valid, but
+since the library is already initialized, it should fail). 
+Expected behavior: The assertions on the return value of Mem_Init execute successfully. m_error is E_BAD_ARGS (4) each time the initialization 
+fails and it is printed. 
+
+worst_fit_test.c
+We check that new allocations are placed in the largest available hole. To do this, we request 100 bytes of memory, which will cause 4096 bytes
+to be mapped. By then making a hundred 1-byte requests, we fill the first 4000 bytes with headers and allocated blocks, leaving 96 bytes (32-byte 
+header and 64-byte hole) at the end. We then free three contiguous blocks in the middle and coalesce, merging them into an 88-byte hole. Finally,
+we make one more 1-byte request. This allocated block should be placed in the new, larger hole, not in the leftover hole at the end. 
+Expected behavior: When we dump the memory, there will still be an unchanged 64-byte hole at the end of available memory. 48 bytes of the earlier hole
+will remain. 
+
+simple_coalescence_test.c
+We check that coalescing works as expected by doing the same 100-byte-request setup as above, freeing various blocks without coalescing, then calling
+Mem_Free on a NULL pointer with coalesce = 1. Afterwards, it does a memory dump so the results can be examined. 
+Expected behavior: The specifics of what should happen are described in the main function for the test. Essentially, we want the holes that can merge
+to merge, and to make sure the hole list is still in order afterwards. 
+
+running_coalescence_test.c
+This test is identical to the one above, except that the whole list is coalesced after each block is freed (i.e. each block is freed with coalesce
+flag 1.) It should have the same effect. It is designed to test that repeatedly calling coalesce does not mess up the hole list or behave 
+unexpectedly. 
+
+local_coalesce_test.c
+This test checks that local coalescence works as expected and leaves a sane hole list. It has the same setup as the other two coalescence tests, 
+setting up a single page of memory that is almost totally filled with a hundred pairs of 32-byte headers and 8-byte headers. Then, it frees all of
+those 8-byte allocations with the no-coalescence flag, except for a few select ones: one near the head, two near each other in the middle, one far from others in the middle, and one near the tail. Each of those allocations is then freed with the local coalesce flag on. 
+Expected behavior: Each allocation will coalesce with the neighborhood of holes around it. The two close coalesces will merge together. The hole list will be sane, with a correct head and tail and structure, afterwards. By looking at the sizes of holes that form at each step, we can also see 
+that the local coalescing stops when it encounters an allocated block (i.e. only merges adjacent holes) (this can be seen with the two initially un-
+freed blocks that are close together.) (TODO: This requires a memory dump at each step)
+
+simple_free_test.c
+Tests that freeing regular-sized and odd-sized blocks of memory works as expected, and leaves a sane hole list. 
+Expected behavior: the memory dump has correctly placed holes and allocated blocks for this series of steps (not very specific, I know, but
+the sequence of steps is not very complicated or structured)
+
+edge_case_free_test.c
+We try to create unusual cases for freeing and re-adding a block to the hole list: when it is the first hole (before the current head of the hole 
+list), and when it is the last hole (after the current tail of the hole list). To do this, we use the same 100-allocation setup that we have 
+previously 
+/Expected behavior: The hole list reacts as expected and is sane (TODO: write up better description)
+
+quota_test.c
+Tests that the user is only allowed to allocate more memory when they haven't reached their quota. First, the user requests up to their quota, 
+and is denied further memory. But, after freeing some of the allocations they have, it is allowed. 
+Expected behavior: all assertions succeed. 
+
+out_of_space_test.c
+We use the 100-byte request setup from the earlier tests, which allows us to almost fill the available memory. If we then free enough of the allocated
+blocks to give us a remaining quota larger than the size of the largest hole, without coalescing, we can provoke an E_NO_SPACE. 
+Expected behavior: The assertions succeed, because the final allocation fails with E_NO_SPACE. 
+
+free_pointer_twice_test.c
+Checks that freeing a pointer twice produces an error. 
+Expected behavior: The assertions succeed, because freeing the pointer for the first time is allowed, and freeing it for the second time is not. 
