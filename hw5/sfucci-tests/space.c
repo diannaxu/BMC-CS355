@@ -7,9 +7,10 @@
 
 /*
 
-This tests the worst case with memory allocation,
-in which the user requests MEMSIZE 1-byte blocks.
-All of these requests should be granted.
+This tests that there are checks in place
+to make sure that rounding up to the nearest
+page size doesn't accidentally allow more
+storage than the user requested.
 */
 
 int main(){
