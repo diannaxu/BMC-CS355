@@ -6,7 +6,6 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 #include "mem.h"
 
 #define COALESCE_NONE 0
@@ -51,6 +50,15 @@ int main() {
     }
     printf("expected: 10\n");
     printf("got: %d\n", sum);
+
+    Mem_Dump();
+
+    Mem_Free(p1, COALESCE_NONE);
+    Mem_Free(p1->next, COALESCE_NONE);
+    Mem_Free(p2, COALESCE_NONE);
+    Mem_Free(p3, COALESCE_ALL);
+    Mem_Dump();
+    printf("should exist only one big free block\n");
 
     exit(EXIT_SUCCESS);
 }
