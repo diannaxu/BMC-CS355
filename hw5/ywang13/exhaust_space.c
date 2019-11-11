@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 #include "mem.h"
 
 #define COALESCE_NONE 0
@@ -14,10 +15,10 @@
 
 int main() {
     assert(Mem_Init(10000) == 0);
-    void* ptr;
     srandom(time(NULL));
     while(Mem_Alloc((long) random() % 50 + 1));
     assert(m_error == E_NO_SPACE);
     Mem_Dump();
+    printf("passed\n");
     exit(EXIT_SUCCESS);
 }

@@ -1,10 +1,11 @@
 //
 // Created by Yuxiao Wang on 11/10/19.
-// test simple allocation and alignment
+// test simple allocation, alignment, and free
 //
 
 #include <assert.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "mem.h"
 
 int main() {
@@ -28,6 +29,10 @@ int main() {
     void* p6 = Mem_Alloc(25);
     assert(p6);
 
+    // free
+
+
     Mem_Dump();
+    printf("passed\n");
     exit(EXIT_SUCCESS);
 }
