@@ -10,7 +10,7 @@
 #include <assert.h>
 #include <limits.h>
 #include <unistd.h>
-#define REGION 4000
+#define REGION 4064
 #define SUCCESS 0
 #define FAILURE -1
 #define SIZE1 32
@@ -31,8 +31,8 @@ int main() {
         }
         count ++;
     }
-
     assert(count == 64);
+
     for (int i = 0; i<64;i++){
         if (i % 2 == 0){
             Mem_Free(ptr[i],0);
@@ -50,14 +50,13 @@ int main() {
     }
     temp = Mem_Alloc(SIZE2);
     assert(temp==NULL);
+
     for (int i = 0; i<64;i++){
         if (i % 4 == 3){
             Mem_Free(ptr[i],2);
             ptr[i] = NULL;
         }
     }
-    temp = Mem_Alloc(SIZE2);
-    assert(temp==NULL);
 
     Mem_Free(NULL,1);
     temp = Mem_Alloc(REGION);
