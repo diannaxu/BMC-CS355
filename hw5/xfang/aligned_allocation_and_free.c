@@ -1,4 +1,4 @@
-/* 
+/*
     Author: Esther(Xinning) Fang
     Aligned odd-sized allocations and frees
 */
@@ -18,15 +18,15 @@ int main() {
     if (ptr1 == NULL) {
         printf("Error during 16-byte allocation.\n");
         exit(EXIT_FAILURE);
-    } 
+    }
 
-    // 1-byte allocation 
-    // 8 bytes will be allocated 
+    // 1-byte allocation
+    // 8 bytes will be allocated
     void *ptr2 = Mem_Alloc(1);
     if (ptr2 == NULL) {
         printf("Error during 1-byte allocation.\n");
         exit(EXIT_FAILURE);
-    } 
+    }
 
     // 23-byte allocation
     // 24 bytes will be allocated
@@ -34,9 +34,10 @@ int main() {
     if (ptr3 == NULL) {
         printf("Error during 23-byte allocation.\n");
         exit(EXIT_FAILURE);
-    } 
+    }
 
     Mem_Dump();
+    
     if (Mem_Free(ptr1, 0) == -1) {
         printf("Error when freeing the 8-byte allocation.\n");
         exit(EXIT_FAILURE);

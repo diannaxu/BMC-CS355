@@ -1,6 +1,7 @@
-/* 
+/*
     Author: Esther(Xinning) Fang
     Initialize with size of 1 page
+    When Mem_Dump(), the size of the allocated block should be page_size
 */
 #include <stdio.h>
 #include <unistd.h>
