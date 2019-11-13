@@ -25,6 +25,7 @@ Expected behavior: exit normally
 int main() {
   int requested = Mem_Init(100);
   assert(requested == SUCCESS);
+  printf("Requested for less than 1 page, actual allocated should be rounded up to 1 page\n");
   Mem_Dump();
 
   exit(EXIT_SUCCESS);

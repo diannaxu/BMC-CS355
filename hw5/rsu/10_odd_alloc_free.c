@@ -44,6 +44,7 @@ int main() {
 
   assert(Mem_Free(ptr1, NO_COALESCE) == SUCCESS);
   assert(Mem_Free(ptr2, NO_COALESCE) == SUCCESS);
+  printf("After freeing ptr1 and ptr2 without coalescing:\n");
   Mem_Dump();
   exit(EXIT_SUCCESS);
 }

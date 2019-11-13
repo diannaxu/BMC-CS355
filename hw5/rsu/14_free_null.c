@@ -46,18 +46,18 @@ int main() {
   printf("ptr3 address: %p\n", ptr3);
   assert((long long)ptr3%EIGHT_BYTES == SUCCESS);
 
-  printf("Mem_Free(NULL, NO_COALESCE) should have no affect on free list.\nBefore:\n");
-  Mem_Dump();
-  assert(Mem_Free(NULL, NO_COALESCE) == SUCCESS);
-  printf("After:\n");
-  Mem_Dump();
-
   assert(Mem_Free(ptr1, NO_COALESCE) == SUCCESS);
   assert(Mem_Free(ptr2, NO_COALESCE) == SUCCESS);
   assert(Mem_Free(ptr3, NO_COALESCE) == SUCCESS);
   printf("After freeing allocated 20 bytes, 30 bytes, and 50 bytes without coalescing:\n");
   Mem_Dump();
 
+  printf("Mem_Free(NULL, NO_COALESCE) should have no affect on free list.\nBefore:\n");
+  Mem_Dump();
+  assert(Mem_Free(NULL, NO_COALESCE) == SUCCESS);
+  printf("After:\n");
+  Mem_Dump();
+  
   printf("Mem_Free(NULL, COALESCE_ALL) should merge all holes.\n");
   assert(Mem_Free(NULL, COALESCE_ALL) == SUCCESS);
   printf("After coalescing all list:\n");

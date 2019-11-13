@@ -1,7 +1,9 @@
 /*
-Test for illegal free  (freeing a pointer that doesn't point to allocated block)
-use assert to make sure this free fails
+Test for illegal free (freeing a pointer that doesn't point to allocated block)
+tested for ptr-1, and double free
 Expected behavior:
+prints: "illegal free (off by 1) is detected successfully"
+"illegal free (double free) is detected successfully"
 exit normally
 */
 
@@ -34,7 +36,11 @@ int main() {
   assert((long long)ptr1%EIGHT_BYTES == SUCCESS);
 
   assert(Mem_Free(ptr1-1, NO_COALESCE) == FAIL);
-  printf("illegal free is detected successfully\n");
+  printf("illegal free (off by 1) is detected successfully\n");
+
+  assert(Mem_Free(ptr1, NO_COALESCE) == SUCCESS);
+  assert(Mem_Free(ptr1, NO_COALESCE) == FAIL);
+  printf("illegal free (double free) is detected successfully\n");
 
   exit(EXIT_SUCCESS);
 }

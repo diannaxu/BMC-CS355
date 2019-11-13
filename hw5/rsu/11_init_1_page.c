@@ -26,6 +26,7 @@ int main() {
   long pagesize = getpagesize();
   int requested = Mem_Init(pagesize);
   assert(requested == SUCCESS);
+  printf("Requested for 1 page,actual allocated will be greater than 1 page, but should be multiples of a page\n");
   Mem_Dump();
 
   exit(EXIT_SUCCESS);
