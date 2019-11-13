@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Check coalesce with 0, 1 and 2 and freeing a NULL pointer
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "mem.h"

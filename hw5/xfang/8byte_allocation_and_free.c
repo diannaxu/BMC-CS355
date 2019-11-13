@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Simple 8-byte allocation and free
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"

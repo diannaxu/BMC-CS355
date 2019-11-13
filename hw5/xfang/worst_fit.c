@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Given two free chunks, check if Mem_Alloc() takes the chunk with the largest size
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"

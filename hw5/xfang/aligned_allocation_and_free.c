@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Aligned odd-sized allocations and frees
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"

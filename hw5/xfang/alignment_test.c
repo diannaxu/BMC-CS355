@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Test whether memory is 8-byte aligned 
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "mem.h"
 

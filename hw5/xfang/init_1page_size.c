@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Initialize with size of 1 page
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"

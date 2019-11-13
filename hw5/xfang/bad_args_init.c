@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Bad args for Mem_Init(), including sizeOfRegion less than 0 and multiple calls to Mem_Init()
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"

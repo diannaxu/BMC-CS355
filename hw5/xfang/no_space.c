@@ -2,7 +2,7 @@
     Author: Esther(Xinning) Fang
     Make sure that no space is allocated when requested size is larger than any size of free chunks
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"
