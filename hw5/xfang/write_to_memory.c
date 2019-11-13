@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "mem.h"
+#include "../mem.h"
 
 int main() {
     if (Mem_Init(1024) == -1) {
