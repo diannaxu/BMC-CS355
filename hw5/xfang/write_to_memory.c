@@ -1,8 +1,8 @@
-/* 
+/*
     Author: Esther(Xinning) Fang
-    Test to check if allocated memory is writable 
+    Test to check if allocated memory is writable
 */
-#include <sdtio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include "../mem.h"
@@ -12,7 +12,7 @@ int main() {
         printf("Error when initilizing.\n");
         exit(EXIT_FAILURE);
     }
-    void *ptrs[3];
+    int *ptrs[3];
     for (int i = 0; i < 3; i++) {
         ptrs[i] = Mem_Alloc(sizeof(int));
         if (ptrs[i] == NULL) {
@@ -23,8 +23,8 @@ int main() {
     }
     Mem_Dump();
     for (int j = 0; j < 3; j++) {
-        printf("%d is written to memory location %p.\n", ptrs[i], *ptrs[i]);
-        Mem_Free(ptr[i], 0);
+        printf("%d is written to memory location %p.\n", *ptrs[j], ptrs[j]);
+        Mem_Free(ptrs[j], 0);
     }
     Mem_Dump();
 
