@@ -20,7 +20,7 @@ int main() {
     } 
 
     Mem_Dump(); 
-    if (Mem_Free(ptr1, 0) == =1) {
+    if (Mem_Free(ptr1, 0) == -1) {
         printf("Error when freeing the 8-byte allocation.\n");
         exit(EXIT_FAILURE);
     }
