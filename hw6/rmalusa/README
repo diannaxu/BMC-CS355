@@ -1,0 +1,3 @@
+inode_sanity_test.c
+Checks that the i-node array of a disk image is sane, specifically that each inode entry is either free (in the free list, and has nlink value 0) or in use (not in the free list, and has nlink value >=1).
+Expected behavior: prints the number of inodes, the inodes in the free list, the bitmap of inodes in the free list (really an intmap), and runs to completion after successfully asserting the condition above for each inode. 
