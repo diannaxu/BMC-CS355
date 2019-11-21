@@ -10,6 +10,6 @@ the triple indirect blocks than the previous one.) Free i-node and free block li
 
 1024-direct - A simple disk image that uses only direct blocks. The block size is 1024, and there are only 100 data blocks. It has two i-nodes
 that are in use, each of which points to some junk data (one to two blocks of ascii characters, and one to ten blocks of ascii characters). The data
-blocks are distributed through the data region and are not in order. The swap region has size 0. **NOTE: the block free list is not filled out!!**
+blocks are distributed through the data region and are not in order. The swap region has size 0. 
 
 1024-empty - A disk image where no i-nodes are in use, with block size 1024. The swap region has size 0. 
