@@ -1,3 +1,43 @@
+TESTS
+
+Compile the tests with "make tests" from the main assignment directory. 
+
+Many of the tests use functions that are also used in defrag.c, for example to read in a disk image, print an i-node, or calculate
+the size of a file in blocks. Obviously, it would be better to put these functions in a .h file, but I was having technical 
+difficulties so their definitions are just appended to the tests themselves. 
+
+There is also an additional group of functions that is used to list all the data blocks referenced by an i-node. These functions
+are declared in list_fns.h and defined individually in the tests that use them. Again, I know this is bad design but my priorities
+did not lie in that direction. 
+
 inode_sanity_test.c
+Run with ./inode_sanity_test [filename] 
 Checks that the i-node array of a disk image is sane, specifically that each inode entry is either free (in the free list, and has nlink value 0) or in use (not in the free list, and has nlink value >=1).
 Expected behavior: prints the number of inodes, the inodes in the free list, the bitmap of inodes in the free list (really an intmap), and runs to completion after successfully asserting the condition above for each inode. 
+NOTE: This test goes into an infinite loop if run on either of Xiting's disk images, because the inode free list is not valid. 
+Because the defragmentor does not change the i-node list, it will also fail on defragged versions of these disk images. 
+
+inode_valid_blocks_test.c
+Run with ./inode_valid_blocks_test [filename]
+Checks that each inode in a disk image has at least as many valid block indices stored in it as its size requires, that is,
+all of the block indices provided by a used i-node are between 0 and the number of data blocks. 
+Expected behavior: All assertions succeed, and program exits successfully. 
+
+block_list_sanity_test.c
+Run with ./block_sanity_test [filename]
+Checks that each block is either used once by an i-node, or included once in the free list. 
+Expected behavior: All assertions succeed and the program exits successfully. 
+NOTE: This test goes into an infinite loop if run on Xiting's disk images because the free block list is not configured correctly. 
+
+extract_data_test.c 
+Run with ./extract_data_test [filename]
+This test takes every data block of each used i-node and writes them to the output file "data" in sequential order. For disk images
+containing only one file, the output will be the contents of that file. For disk images with more than one file, the output will be
+all the files appended to one another in order. 
+Directly, this test does not test anything except that the data can be successfully read, but by using it to extract data both from
+a fragmented disk image and our defragmented copy, then comparing them with "diff", we can verify that the data contained in each
+i-node's blocks is unchanged. (Because all the files are appended together, it is distantly possible that this test could give
+a false positive if data had been accidentally moved from the end of one i-node's data blocks to the beginning of the next i-node's
+data blocks. However, this seems like a bug that would be hard to produce accidentally).
+
+

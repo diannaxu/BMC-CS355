@@ -1,0 +1,16 @@
+DISK IMAGES
+
+datafile-frag - the provided fragmented disk image. Block size 512, uses direct and single indirect blocks. 
+
+large-frag - Ziting's large fragmented disk image. Block size 512, uses direct, single, double and triple indirect blocks. Free i-node and free block
+lists are not filled out. 
+
+larger-frag - Ziting's larger fragmented disk image. Block size 512, uses direct, single, double and triple indirect blocks (storing more data in
+the triple indirect blocks than the previous one.) Free i-node and free block lists are not filled out. 
+
+1024-direct-only - A simple disk image that uses only direct blocks. The block size is 1024, and there are only 100 data blocks. It has two i-nodes
+that are in use, each of which points to some junk data (one to two blocks of ascii characters, and one to ten blocks of ascii characters). The data
+blocks are distributed through the data region and are not in order. The swap region has size 0. 
+
+
+

@@ -154,7 +154,7 @@ void* get_file_contents(char* filename, long* file_size){
   return disk_image; 
 }
 
-void print_inode(struct inode* inode_addr){
+void print_inode(struct inode* inode_addr, int unused){
   printf("Next inode: %d\n", inode_addr->next_inode);
   printf("Protect: %d\n", inode_addr->protect);
   printf("Nlink: %d\n", inode_addr->nlink);
@@ -174,105 +174,3 @@ void print_inode(struct inode* inode_addr){
   printf("i3block: %d\n", inode_addr->i3block); 
 }
 
-/*
-// Given the address of an i-node on the fragmented disk image,
-// this function copies its non-data block attributes into the appropriate i-node in the new disk image,
-// then iterates through its data blocks, copying them in a condensed manner into the new data block
-// and writing their new addresses into the new i-node 
-void condense_inode(struct inode* old_inode, struct inode* new_inode){
-  // Copy basic attributes into new i-node
-  new_inode->next_inode = old_inode->next_inode;
-  new_inode->protect = old_inode->protect;
-  new_inode->nlink = old_inode->nlink;
-  new_inode->size = old_inode->size;
-  new_inode->uid = old_inode->uid;
-  new_inode->gid = old_inode->gid;
-  new_inode->ctime = old_inode->ctime;
-  new_inode->mtime = old_inode->mtime;
-  new_inode->atime = old_inode->atime;
-  new_inode->i2block = 0;
-  new_inode->i3block = 0; 
-  
-  // Zero out dblocks and iblocks arrays in new i-node
-  for(int i=0; i<N_DBLOCKS; i++){
-    new_inode->dblocks[i] = 0;
-  }
-  for(int i=0; i<N_IBLOCKS; i++){
-    new_inode->iblocks[i] = 0; 
-  }
-			     
-  // Calculate number of file blocks used by old i-node
-  long inode_num_blocks; 
-  if(old_inode->size % block_size == 0){
-    inode_num_blocks = old_inode->size/block_size; 
-  } else {
-    inode_num_blocks = old_inode->size/block_size + 1; 
-  }
-  printf("Inode num blocks: %ld\n", inode_num_blocks);
-
-  int blocks_copied = 0;
-  // Copy and condense each direct block 
-  for(int i=0; blocks_copied<inode_num_blocks && i<N_DBLOCKS; i++){
-    // Copy block 
-    int copied_block_addr = copy_block(old_inode->dblocks[i]);
-    
-    // Add new ptr in new i-node
-    new_inode->dblocks[i] = copied_block_addr;
-    blocks_copied++; 
-  }
-
-  // Handle single indirect blocks
-  for(int i=0; blocks_copied<inode_num_blocks && i<N_IBLOCKS; i++){
-    if(inode_num_blocks - blocks_copied > (block_size/sizeof(int))){
-      new_inode->iblocks[i] = condense_single_indirect_block(old_inode->iblocks[i], block_size/sizeof(int));
-      blocks_copied += block_size/sizeof(int); 
-    } else {
-      new_inode->iblocks[i] = condense_single_indirect_block(old_inode->iblocks[i], inode_num_blocks-blocks_copied);
-      blocks_copied = inode_num_blocks; 
-    }
-  }
-
-  // TODO: handle double and triple indirect blocks
-} 
-
-// Takes: the block index of a single indirect block, and the number of pointers to copy from that block 
-int condense_single_indirect_block(int source_block, int num_to_copy){
-  // Condense the contents of a single indirect block,
-  // writing the indirect block first, followed by the blocks it points to,
-  // into the next free blocks in the new disk image
-  // return the block number of the indirect block itself
-
-  // Get address of single indirect block in original disk image 
-  void* block_addr = disk_image + data_region_start + (source_block * block_size);
-  int* i_src = (int*) block_addr; 
-  // Get address of the block we will write the new single indirect block to 
-  int* indirect_block_new = (int*) (new_data + (block_size * next_new_free_block));
-  int to_return = next_new_free_block;
-  next_new_free_block++;
-  
-  for(int i=0; i<num_to_copy; i++){
-    indirect_block_new[i] = copy_block(i_src[i]);   
-  }
-  for(int i=num_to_copy; i<block_size/sizeof(int); i++){
-    indirect_block_new[i] = 0; 
-  }
-
-  return to_return; 
-}
-
-// Copies block_size bytes of data from block source_block to the next free block in the new data segment
-// Returns the block number to which it was written 
-int copy_block(int source_block){
-
-  // Get actual pointer to correct address in disk_image from data block #
-  void* block_addr = disk_image + data_region_start + (source_block * block_size); 
-  
-  char* c_src = (char*) block_addr; 
-  char* dest = (char*) (new_data + (block_size * next_new_free_block)); 
-  for(int i=0; i<block_size; i++){
-    dest[i] = c_src[i]; 
-  }
-  next_new_free_block++;
-  return next_new_free_block - 1; 
-}
-*/
