@@ -43,6 +43,7 @@ int main(int argc, char**argv){
       assert(*addr == (current_free_block +1));
       current_free_block++;
       counted_free_blocks++;
+      free(addr);
     }
     //assert that data at current_free block's first 4 bytes is -1
     fseek(defrag_file, block_region_start + (blocksize * current_free_block), SEEK_SET);
@@ -51,11 +52,12 @@ int main(int argc, char**argv){
     printf("free block #%d points to next free block %d\n", current_free_block, *addr);
     assert(*addr == -1);
     counted_free_blocks++;
+    free(addr);
   }else{
     assert(sblock ->free_block == -1);
   }
   assert(counted_free_blocks == expected_free_blocks);
-  
+  fclose(defrag_file);
   free(data);
   return 0;
 }

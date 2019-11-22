@@ -60,7 +60,7 @@ int main(){
     assert(*val == -1);
     free(data);
     free(val);
-
+    fclose(new_img);
     printf("Success\n");
     
   }

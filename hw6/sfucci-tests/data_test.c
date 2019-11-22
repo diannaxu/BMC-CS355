@@ -40,6 +40,10 @@ int main(int argc, char ** argv){
   FILE * orig_data_file = extract_data(argv[1], "orig-data");
   //printf("\n\nNew data file\n\n");
   FILE * new_data_file = extract_data(argv[2], "new-data");
+
+  fclose(orig_data_file);
+  fclose(new_data_file);
+  
   return 0;
 }
 
@@ -105,7 +109,7 @@ FILE* extract_data(char * old_filename, char * new_filename){
     }
     
   }
-  
+  fclose(tmp_file);
   free(data_ptr);
   return data_region_file;
 }

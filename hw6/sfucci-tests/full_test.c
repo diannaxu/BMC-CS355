@@ -49,7 +49,7 @@ int main(){
     struct superblock * sblock = (struct superblock *) (data+512);
     assert(sblock->free_block == -1);
     free(data);
-    
+    fclose(new_img);
   }
 
 }
