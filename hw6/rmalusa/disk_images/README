@@ -13,5 +13,3 @@ that are in use, each of which points to some junk data (one to two blocks of as
 blocks are distributed through the data region and are not in order. The swap region has size 0. 
 
 1024-empty - A disk image where no i-nodes are in use, with block size 1024. The swap region has size 0. 
-
-512-full - A disk image that has 125 512-byte blocks and uses all of them, so that the free block index in the superblock is -1. They all belong to one i-node, which uses all its direct blocks and one indirect block. Can be used in conjunction with a block list sanity check to check that the defragmentor handles disks that use all their blocks well. The swap region has size 0. The data is a JPEG. 
