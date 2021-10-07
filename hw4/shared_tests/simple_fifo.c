@@ -11,7 +11,10 @@ thread 1 : 1
 done
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include "userthread.h"
+
+#define FAIL -1
 
 void test(void* arg) {
   int i = *(int *)arg;
@@ -31,6 +34,9 @@ int main () {
   thread_join(t0);
   thread_join(t1);
   printf("done\n") ;
-  thread_libterminate();
-  return 0 ;
+  if (thread_libterminate() == FAIL)
+    exit(EXIT_FAILURE);
+
+  exit(EXIT_SUCCESS);
 }
+
