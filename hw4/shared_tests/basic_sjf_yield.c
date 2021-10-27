@@ -43,7 +43,6 @@ int main(void) {
   int tid5 = thread_create(foo200, NULL, 1);
   int tid6 = thread_create(foo500, NULL, 1);
 
-  printf("%s\n", );
 
   int n  = 6;
   int tids[] = { tid1, tid2, tid3, tid4, tid5, tid6 };
