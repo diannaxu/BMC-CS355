@@ -17,6 +17,9 @@
 * Finished running thred 5
 * Started running thread 6
 * Finished running thread 6
+* Finished running thread 2
+* Finished running thread 3
+* Finished running thread 1
 * Returned to main
 */
 
