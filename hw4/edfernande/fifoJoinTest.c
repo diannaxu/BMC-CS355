@@ -41,8 +41,8 @@ int main(int argc, char** argv) {
         threads[i].waitFor = -1;
     }
     threads[0].waitFor = 3;
-    threads[2].waitFor = 4;
-    threads[3].waitFor = 6;
+    threads[1].waitFor = 4;
+    threads[2].waitFor = 6;
 
     thread_libinit(FIFO);
 
