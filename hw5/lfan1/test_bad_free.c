@@ -43,14 +43,14 @@ int main() {
 
   printf("--start freeing NULL-->invalid.\n");
   result = Mem_Free(NULL, 0);
-  assert(result == 0);
+  assert(result == -1);
 
   printf("--start freeing.\n");
   result = Mem_Free(ptr, 0);
   assert(result == 0);
   printf("--start double freeing-->invalid.\n");
   result = Mem_Free(ptr, 0);
-  assert(result == 0);
+  assert(result == -1);
 
   Mem_Dump();
 

@@ -45,7 +45,7 @@ int main()
 
     //check over-memory 
     int *ptr_max;
-    ptr_max= (int *)Mem_Alloc(1000);
+    ptr_max= (int *)Mem_Alloc(20000);
     //check pointer correctness
     assert(ptr_max == NULL);
     //check right error code
