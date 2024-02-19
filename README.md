@@ -9,6 +9,6 @@ When writing test cases, remember the following:
 1. keep it short, test one thing only and name it accordingly
 2. each test case should be supplied with expected correct behavior, either as comments at the top, or as output (via printf). 
 
-There is a directory for each homework. Please create a subdir with your bi-co user name in the corresponding directory, and post all your test cases there.
+There is a directory for each homework. **Please create a subdir with your bi-co user name in the corresponding directory**, and post all your test cases there.
 
 Happy coding!!
