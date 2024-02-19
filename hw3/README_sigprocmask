@@ -1,0 +1,50 @@
+1. sigprocmask() is used to examine and change the signal mask. The signal mask determines
+which signals are blocked (ignored) and which are not. This system call allows a process to 
+manipulate its signal mask to control signal handling behavior.
+
+function def: int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
+
+Parameters: 
+    
+   how: Specifies how the signal mask should be changed. It can be one of the following values:
+
+      SIG_BLOCK: Add the signals in set to the current mask.
+      SIG_UNBLOCK: Remove the signals in set from the current mask.
+      SIG_SETMASK: Set the mask to the value specified in set.
+
+   set: Pointer to a sigset_t structure containing the signals to be added, removed, or set.
+
+   oset: If not NULL, the previous signal mask is stored in oldset.
+
+2. sigaddset()
+
+The sigaddset() function adds the individual signal specified by the signo to the signal set 
+pointed to by set. Applications must call either sigemptyset() or sigfillset() at least once 
+for each object of type sigset_t prior to any other use of that object. If such an object is 
+not initialised in this way, but is nonetheless supplied as an argument to any of sigaction(), 
+sigaddset(), sigdelset(), sigismember(), sigpending() or sigprocmask(), the results are undefined.
+
+function def: int sigaddset(sigset_t *set, int signo);
+
+Parameters:
+
+      set: Pointer to a sigset_t structure containing the signals to be added.
+
+      signo: The signal to be added to the set
+
+3. sigemptyset()
+
+The sigemptyset() function initialises the signal set pointed to by set, such that all signals 
+defined in this document are excluded.
+
+function def: int sigemptyset(sigset_t *set);
+
+Parameters: 
+
+   set: Pointer to a sigset_t structure to be initialized as an empty set.
+
+
+Code Sample: The sample code shows how the three sytem calls work together to block and unblock signal.
+
+To Compile: gcc sigproc.c
+To Run: ./a.out
