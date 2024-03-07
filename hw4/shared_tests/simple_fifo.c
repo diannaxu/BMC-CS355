@@ -1,4 +1,4 @@
-// Simple two threads FIFO
+// Simple two threads FIFO with yield
 // Dianna xu
 
 /* Expected output
