@@ -1,6 +1,14 @@
 /*
 author: Yue Chen
 The program is to test basic functioins: create with arg and join
+
+Expected:
+FIFO Scheduling
+1 2 3 
+1 2 3 
+1 2 3 
+1 2 3 
+1 2 3 
 */
 #include "userthread.h"
 #include <stdio.h> 
@@ -27,12 +35,11 @@ int main(){
     }
     struct ABC test ={1,2,3};
     for(int i=0;i<5;i++){
-        if(thread_create(a,(void *)&test,0)==-1){
+        int tid = thread_create(a,(void *)&test,0);
+        if(tid==-1){
             exit(EXIT_FAILURE);
         }
-    }
-    for(int i=0;i<5;i++){
-        if(thread_join(i)==-1){
+        if(thread_join(tid)==-1){
             printf("failed to join thread %d\n",i);
         }
     }
