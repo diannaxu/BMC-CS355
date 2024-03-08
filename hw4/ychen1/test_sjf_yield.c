@@ -1,3 +1,7 @@
+/*
+author: Yue Chen
+The program is to test SJF scheduling and thread_yield in the case of SJF
+*/
 #include <stdio.h>  
 #include <stdlib.h>
 #include <unistd.h> 
