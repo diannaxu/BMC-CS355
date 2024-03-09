@@ -4,10 +4,10 @@
 
 int main() {
     if (thread_libinit(FIFO) == 0) {
-        printf("FIFO initialized successfully.\n");
+        printf("FIFO initialized successfully\n");
 
         if (thread_libterminate() == 0) {
-            printf("terminated successfully.\n");
+            printf("terminated successfully\n");
             exit(EXIT_SUCCESS);
         } else {
             fprintf(stderr, "error: failed to terminate thread library\n");
