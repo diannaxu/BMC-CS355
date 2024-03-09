@@ -1,5 +1,5 @@
 /**
- * basic_priority_test.c
+ * multi_priority_test.c
  * Author: gchoe
  * Date: 3/8/2024
  * 
@@ -8,11 +8,18 @@
  * Did not add print statements for other EXIT_FAILURE's since they should
  * already be checked by the other test case files.
  *
- * Expected Result:
+ * Expected Result is printed in the order of priority so -1, 0, 1
+ * So, for example:
  * Thread 1 entered work(), working!
+ * Thread 4 entered work(), working!
+ * Thread 7 entered work(), working!
  * Thread 2 entered work(), working!
+ * Thread 5 entered work(), working!
+ * Thread 8 entered work(), working!
  * Thread 3 entered work(), working!
- * Success: PRIORITY works as expected!
+ * Thread 6 entered work(), working!
+ * Thread 9 entered work(), working!
+ * Success: PRIORITY works as expected with multiple threads!
  */
 
 #include <stdio.h>
@@ -32,7 +39,7 @@ int main() {
 
     int priority_value = -1;
 
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < 10; i++) {
         int tid = thread_create(work, &i, priority_value);
         // Allows for tid3 to have priority value -1, tid2 to be 0 and
         // tid1 to be 1
@@ -57,6 +64,6 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    printf("Success: PRIORITY works as expected!\n");
+    printf("Success: PRIORITY works as expected with multiple threads!\n");
     exit(EXIT_SUCCESS);
 }

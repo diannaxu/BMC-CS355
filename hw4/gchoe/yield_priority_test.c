@@ -1,18 +1,21 @@
 /**
- * basic_priority_test.c
+ * yield_priority_test.c
  * Author: gchoe
  * Date: 3/8/2024
  * 
  * Description:
- * Basic test to ensure that two threads are scheduled in PRIORITY.
+ * Basic test to ensure that thread_yield works in PRIORITY.
  * Did not add print statements for other EXIT_FAILURE's since they should
  * already be checked by the other test case files.
  *
  * Expected Result:
- * Thread 1 entered work(), working!
- * Thread 2 entered work(), working!
  * Thread 3 entered work(), working!
- * Success: PRIORITY works as expected!
+ * Thread 2 entered work(), working!
+ * Thread 1 entered work(), working!
+ * Thread 3 finished work().
+ * Thread 2 finished work().
+ * Thread 1 finished work().
+ * Success: PRIORITY with yield works as expected!
  */
 
 #include <stdio.h>
@@ -23,6 +26,8 @@
 void work(void *arg) {
     int tid = *((int *) arg);
     printf("Thread %d entered work(), working!\n", tid);
+    thread_yield();
+    printf("Thread %d finished work().\n", tid);
 }
 
 int main() {
@@ -30,13 +35,13 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    int priority_value = -1;
+    int priority_value = 1;
 
     for (int i = 1; i < 4; i++) {
         int tid = thread_create(work, &i, priority_value);
         // Allows for tid3 to have priority value -1, tid2 to be 0 and
         // tid1 to be 1
-        priority_value++;
+        priority_value--;
 
         if (priority_value > 1) {
             priority_value = -1;
@@ -57,6 +62,6 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    printf("Success: PRIORITY works as expected!\n");
+    printf("Success: PRIORITY with yield works as expected!\n");
     exit(EXIT_SUCCESS);
 }

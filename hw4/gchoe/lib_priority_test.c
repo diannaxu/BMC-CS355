@@ -1,7 +1,15 @@
 /**
+ * lib_priority_test.c
  * Author: gchoe
- * Purpose: Simple test to ensure the library (libinit and libterminate)
+ * Date: 3/8/2024
+ * 
+ * Description:
+ * Simple test to ensure the library (libinit and libterminate)
  * works accordingly with PRIORITY.
+ *
+ * Expected Result:
+ * Success: Initialized thread library (PRIORITY) successfully.
+ * Success: Terminated thread library successfully.
  */
 
 #include <stdio.h>
@@ -11,16 +19,17 @@
 
 int main() {
     if (thread_libinit(PRIORITY) == -1) {
+        printf("ERROR: Failed to initialize thread library (PRIORITY).\n");
         exit(EXIT_FAILURE);
     }
 
-    printf("Thread library with PRIORITY initialized successfully.\n");
+    printf("Success: Initialized thread library (PRIORITY) successfully.\n");
 
     if (thread_libterminate() == -1) {
+        printf("ERROR: Failed to terminate thread library.\n");
         exit(EXIT_FAILURE);
     }
 
-    printf("Thread library with PRIORITY terminated successfully.\n");
-
+    printf("Success: Terminated thread library successfully.\n");
     exit(EXIT_SUCCESS);
 }

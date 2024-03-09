@@ -1,18 +1,18 @@
 /**
- * basic_priority_test.c
+ * multi_sjf_test.c
  * Author: gchoe
  * Date: 3/8/2024
  * 
  * Description:
- * Basic test to ensure that two threads are scheduled in PRIORITY.
+ * Test to ensure that multiple threads are scheduled in SJF.
  * Did not add print statements for other EXIT_FAILURE's since they should
  * already be checked by the other test case files.
  *
  * Expected Result:
- * Thread 1 entered work(), working!
- * Thread 2 entered work(), working!
- * Thread 3 entered work(), working!
- * Success: PRIORITY works as expected!
+ * Thread 0 entered work(), working!
+ *      ... (same line as above except with incrementing by one thread number)
+ * Thread 9 entered work(), working!
+ * Success: SJF works as expected with multiple threads!
  */
 
 #include <stdio.h>
@@ -26,21 +26,12 @@ void work(void *arg) {
 }
 
 int main() {
-    if (thread_libinit(PRIORITY) == -1) {
+    if (thread_libinit(SJF) == -1) {
         exit(EXIT_FAILURE);
     }
 
-    int priority_value = -1;
-
-    for (int i = 1; i < 4; i++) {
-        int tid = thread_create(work, &i, priority_value);
-        // Allows for tid3 to have priority value -1, tid2 to be 0 and
-        // tid1 to be 1
-        priority_value++;
-
-        if (priority_value > 1) {
-            priority_value = -1;
-        }
+    for (int i = 0; i < 10; i++) {
+        int tid = thread_create(work, &i, 0);
 
         if (tid == -1) {
             printf("ERROR: Could not create thread %d.\n", i);
@@ -57,6 +48,6 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    printf("Success: PRIORITY works as expected!\n");
+    printf("Success: SJF works as expected with multiple threads!\n");
     exit(EXIT_SUCCESS);
 }
