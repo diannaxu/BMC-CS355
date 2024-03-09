@@ -4,6 +4,11 @@
  * works accordingly with FIFO.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "userthread.h"
+
 int main() {
     if (thread_libinit(FIFO) == -1) {
         exit(EXIT_FAILURE);

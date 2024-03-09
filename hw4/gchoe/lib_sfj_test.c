@@ -4,6 +4,11 @@
  * works accordingly with SFJ.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "userthread.h"
+
 int main() {
     if (thread_libinit(SFJ) == -1) {
         exit(EXIT_FAILURE);

@@ -4,6 +4,11 @@
  * works accordingly with PRIORITY.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "userthread.h"
+
 int main() {
     if (thread_libinit(PRIORITY) == -1) {
         exit(EXIT_FAILURE);
