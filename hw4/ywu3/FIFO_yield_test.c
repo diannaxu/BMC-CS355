@@ -3,7 +3,10 @@
 #include "userthread.h"
 
 void test(void *arg) {
-  printf("thread %d is running\n", *((int *)arg));
+    int *fifo = (int *)arg;
+    printf("thread with FIFO %d is running\n", *fifo);
+    thread_yield();
+    printf("thread with FIFO %d yielded\n", *fifo);
 }
 
 int main() {
