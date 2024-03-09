@@ -1,6 +1,8 @@
 /*
 author: Yue Chen
-The program is to test Priority scheduling 
+The program is to test Priority scheduling with different priority
+
+The sequence is random, content at userthread_log.txt is more important
 */
 #include <poll.h>
 #include <stdio.h>
@@ -8,13 +10,13 @@ The program is to test Priority scheduling
 #include "userthread.h"
 
 void a() {
-  poll(NULL, 0, 200);
-  printf("Thread A done, should be third");
+  poll(NULL, 0, 250);
+  printf("Thread A done\n");
 }
 
 void b() {
-  poll(NULL, 0, 200);
-  printf("Thread B done, should be second");
+  poll(NULL, 0, 250);
+  printf("Thread B done\n");
 }
 
 void c() {
