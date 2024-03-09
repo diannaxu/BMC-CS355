@@ -52,7 +52,7 @@ int main(){
     // tid_t tidList[2];
     // thread_create(f2,NULL,NULL); // 1
     tid_t one = thread_create(f3,NULL,LOW_PRIORITY); // 2
-    tid_t two = thread_create(f1,one,HIGH_PRIORITY);// 3
+    tid_t two = thread_create(f1,(void*)one,HIGH_PRIORITY);// 3
     tid_t three = thread_create(f2,NULL,MID_PRIORITY);// 3
 
     thread_join(1);
@@ -64,10 +64,10 @@ int main(){
     thread_libterminate();
     for (int i = 0; i < 3; i++){
     if (arr[i] != expected[i]){
-        printf("Unexpected order");
+        printf("Unexpected order\n");
         return EXIT_FAILURE;
         }
     }
-    printf("SUCCESS"); 
+    printf("SUCCESS\n"); 
     return EXIT_SUCCESS;
 }

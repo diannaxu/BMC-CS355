@@ -64,10 +64,10 @@ int main(){
     thread_libterminate();
     for (int i = 0; i < 3; i++){
     if (arr[i] != expected[i]){
-        printf("Unexpected order");
+        printf("Unexpected order\n");
         return EXIT_FAILURE;
         }
     }
-    printf("SUCCESS"); 
+    printf("SUCCESS\n"); 
     return EXIT_SUCCESS;
 }

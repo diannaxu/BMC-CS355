@@ -14,6 +14,6 @@ int main(){
         printf("FAILED\n");
         return -1;
     }
-    pritnf("SUCCESS\n");
+    printf("SUCCESS\n");
     return 0;
     }   

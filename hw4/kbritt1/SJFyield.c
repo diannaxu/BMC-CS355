@@ -1,7 +1,7 @@
 #include "userthread.h"
 
 int count = 0;
-int expected[] = {2,1,3};
+int expected[] = {2,3,1};
 int arr[3];
 void f1(){
     thread_yield();
@@ -24,13 +24,13 @@ int main(){
     thread_libinit(SJF);
     tid_t one = thread_create(f2,NULL,NO_PRIORITY); // 1
     tid_t two = thread_create(f3,NULL,NO_PRIORITY); // 2
+    
     thread_join(one);
     thread_join(two);
     tid_t three = thread_create(f3,NULL,NO_PRIORITY); // 3
     tid_t four = thread_create(f2,NULL,NO_PRIORITY); // 4
     tid_t five = thread_create(f1,NULL,NO_PRIORITY); // 5
 
-    //print(SJFqueue) // check order of queue to make sure it's 4, 5, 3 in thread log if this joined in the middle
     thread_join(four);
     thread_join(five);
     thread_join(three);
