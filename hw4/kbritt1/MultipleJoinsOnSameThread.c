@@ -1,5 +1,5 @@
 //multiple threads trying to join the same thread (main and two joining one)
-
+//IGNORE THIS TEST CASE it ignores the assumption that there will only be one join per thread id
 #include "userthread.h"
 int count = 0;
 int arr[3] = {0};
