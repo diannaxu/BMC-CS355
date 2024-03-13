@@ -20,10 +20,18 @@ int main() {
 
   int tids[THREAD_NUMBER];
   
-  // create threads in increasing order
-  for (int i = 0; i < THREAD_NUMBER; i++)
-  {
-    tids[i] = thread_create(order_test, i, 0);
+   // create threads in increasing order
+  for (int i = 0; i < THREAD_NUMBER; i++) {
+    int* arg = malloc(sizeof(int)); // Dynamically allocate memory for the argument
+    if (arg == NULL) {
+      perror("Failed to allocate memory for thread argument");
+      exit(EXIT_FAILURE);
+    }
+    *arg = i;
+    tids[i] = thread_create(order_test, arg, 0);
+    if (tids[i] == FAIL) {
+      free(arg); // Handle potential failure to create thread
+    }
   }
 
   // join threads in decreasing order, but should still print in increasing order

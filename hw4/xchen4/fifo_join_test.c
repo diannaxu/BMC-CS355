@@ -9,10 +9,10 @@
 #define THREAD_NUMBER 10
 #define FAIL -1
 
-
 void order_test(void *arg) {
   int i = *(int *)arg;
   printf("Thread %d is executing\n", i);
+  free(arg); // Don't forget to free the allocated memory
 }
 
 int main() {
@@ -22,16 +22,24 @@ int main() {
   int tids[THREAD_NUMBER];
   
   // create threads in increasing order
-  for (int i = 0; i < THREAD_NUMBER; i++)
-  {
-    tids[i] = thread_create(order_test, i, 0);
+  for (int i = 0; i < THREAD_NUMBER; i++) {
+    int* arg = malloc(sizeof(int)); // Dynamically allocate memory for the argument
+    if (arg == NULL) {
+      perror("Failed to allocate memory for thread argument");
+      exit(EXIT_FAILURE);
+    }
+    *arg = i;
+    tids[i] = thread_create(order_test, arg, 0);
+    if (tids[i] == FAIL) {
+      free(arg); // Handle potential failure to create thread
+    }
   }
 
-  printf("No threads should start executing before this.");
+  printf("No threads should start executing before this.\n");
 
-  printf("Ready to join the last thread, threads should be printed in increasing order");
+  printf("Ready to join the last thread, threads should be printed in increasing order\n");
 
-  if (thread_join(tids[THREAD_NUMBER] - 1) == FAIL) {
+  if (thread_join(tids[THREAD_NUMBER - 1]) == FAIL) {
     exit(EXIT_FAILURE);
   }
 
