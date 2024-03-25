@@ -13,6 +13,7 @@ int main(){
         printf("Failed to initialize\n");
         exit(EXIT_FAILURE);
     }
+    Mem_Dump();
     int num = 8;
     printf("\nTesting simple 8-byte allocation\n");
     void* ptr = Mem_Alloc(8);
@@ -25,7 +26,8 @@ int main(){
     printf("\nTesting memory can be written\n");
     ptr = &num;
     printf("The number is %d, should be 8\n",*(int*)ptr);
-
+    Mem_Dump();
+    
     if(Mem_Free(ptr,2)==FAIL){
         printf("Failed to free\n");
         exit(EXIT_FAILURE);
