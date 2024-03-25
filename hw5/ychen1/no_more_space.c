@@ -19,7 +19,7 @@ int main(){
     while(1){
         printf("Allocated 64 bytes\n");
         ptr = Mem_Alloc(64);
-        if (m_error = E_NO_SPACE){
+        if (m_error == E_NO_SPACE){
             printf("Error: Not enough space for allocation.\n");
             exit(EXIT_SUCCESS);
         }
