@@ -14,6 +14,10 @@
 
 void test_aligned_allocations() {
     printf("Test: Few aligned allocations\n");
+    if(Mem_Init(PAGE_SIZE) == FAIL) {
+        printf("Initialization failed with errno %d\n", m_error);
+        exit(EXIT_FAILURE);
+    }
     for (int i = 0; i < 5; i++) {
         void *ptr = Mem_Alloc(8);
         if ((uintptr_t)ptr % 8 == 0) {
@@ -22,6 +26,7 @@ void test_aligned_allocations() {
             printf("Allocation %d failed!\n", i + 1);
         }
     }
+    Mem_Dump();
 }
 
 int main(){

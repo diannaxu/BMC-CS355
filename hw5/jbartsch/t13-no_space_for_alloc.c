@@ -14,17 +14,19 @@
 
 void test_no_space_left_to_allocate() {
     printf("Test: No space left to allocate\n");
-    if (Mem_Init(16) == FAIL) {
+    if (Mem_Init(PAGE_SIZE) == FAIL) {
         printf("Initialization failed!\n");
         exit(EXIT_FAILURE);
     }
-    void *ptr = Mem_Alloc(32);
+    void *ptr = Mem_Alloc(2*PAGE_SIZE);
     if (ptr == NULL && m_error == E_NO_SPACE) {
         printf("No space left to allocate test passed!\n");
     } else {
         printf("No space left to allocate test failed!\n");
     }
+    Mem_Dump();
 }
+
 
 int main(){
     test_no_space_left_to_allocate();

@@ -15,7 +15,7 @@
 void test_worstfit_allocation() {
     printf("Test: Worstfit allocation\n");
     // Initialize with a small size
-    if (Mem_Init(2 * PAGE_SIZE) == FAIL) {
+    if (Mem_Init(5 * PAGE_SIZE) == FAIL) {
         printf("Initialization failed!\n");
         exit(EXIT_FAILURE);
     }
@@ -30,6 +30,7 @@ void test_worstfit_allocation() {
     } else {
         printf("Allocations failed!\n");
     }
+    Mem_Dump();
 }
 
 int main(){

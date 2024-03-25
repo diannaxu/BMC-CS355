@@ -14,6 +14,10 @@
 
 void test_odd_size_allocations() {
     printf("Test: Several odd-sized allocations\n");
+    if(Mem_Init(PAGE_SIZE) == FAIL) {
+        printf("Initialization failed with errno %d\n", m_error);
+        exit(EXIT_FAILURE);
+    }
     for (int i = 0; i < 5; i++) {
         void *ptr = Mem_Alloc(5 * (i + 1));
         if (ptr != NULL) {
@@ -22,6 +26,7 @@ void test_odd_size_allocations() {
             printf("Allocation %d failed!\n", i + 1);
         }
     }
+    Mem_Dump();
 }
 
 int main(){

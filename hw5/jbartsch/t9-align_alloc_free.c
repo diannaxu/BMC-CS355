@@ -14,6 +14,10 @@
 
 void test_aligned_alloc_and_free() {
     printf("Test: Aligned allocation and free\n");
+    if(Mem_Init(PAGE_SIZE) == FAIL) {
+        printf("Initialization failed with errno %d\n", m_error);
+        exit(EXIT_FAILURE);
+    }
     void *ptr = Mem_Alloc(16);
     if (ptr != NULL) {
         printf("Allocation successful!\n");
@@ -22,6 +26,7 @@ void test_aligned_alloc_and_free() {
     } else {
         printf("Allocation failed!\n");
     }
+    Mem_Dump();
 }
 
 int main(){

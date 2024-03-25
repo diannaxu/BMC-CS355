@@ -19,8 +19,10 @@ void test_bad_args_to_mem_init() {
         if (m_error == E_BAD_ARGS)
             printf("Error: Bad arguments to Mem_Init()\n");
     }
+    else {
+        printf("Failed: Mem_Init() did not fail with bad arguments!\n");
+    }
 }
-
 int main(){
     test_bad_args_to_mem_init();
     return 0;

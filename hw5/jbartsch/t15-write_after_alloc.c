@@ -14,6 +14,10 @@
 
 void test_memory_written_after_allocation() {
     printf("Test: Memory can be written to after allocation\n");
+    if(Mem_Init(PAGE_SIZE) == FAIL) {
+        printf("Initialization failed with errno %d\n", m_error);
+        exit(EXIT_FAILURE);
+    }
     void *ptr = Mem_Alloc(8);
     if (ptr != NULL) {
         printf("Allocation successful!\n");
@@ -23,6 +27,7 @@ void test_memory_written_after_allocation() {
     } else {
         printf("Allocation failed!\n");
     }
+    Mem_Dump();
 }
 
 int main(){
