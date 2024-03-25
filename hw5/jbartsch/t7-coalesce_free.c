@@ -15,7 +15,7 @@
 void test_coalesce_free_space() {
     printf("Test: Coalesce of free space\n");
     // Initialize with a small size
-    if (Mem_Init(2 * PAGE_SIZE) == FAIL) {
+    if (Mem_Init(5 * PAGE_SIZE) == FAIL) {
         printf("Initialization failed!\n");
         exit(EXIT_FAILURE);
     }
@@ -34,6 +34,7 @@ void test_coalesce_free_space() {
     } else {
         printf("Coalesce failed!\n");
     }
+    Mem_Dump();
 }
 
 int main(){
