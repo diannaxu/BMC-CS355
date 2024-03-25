@@ -14,11 +14,13 @@
 
 #include "mem.h"
 
-void no_space_left_to_alloc() {
-    while (Mem_Alloc(64) != NULL);
+// Global variable
+int mem_size = 1024;
 
-    // Try to allocate more memory when no space is left.
-    void *ptr = Mem_Alloc(64);
+void no_space_left_to_alloc() {
+    // Try to allocate more memory than there is space.
+    void *ptr = Mem_Alloc(mem_size + 1);
+
     if (ptr == NULL) {
         printf("Success: No space left to allocate test passed!\n");
         exit(EXIT_SUCCESS);
@@ -31,7 +33,7 @@ void no_space_left_to_alloc() {
 
 int main() {
     // Initialize memory alloc
-    if (Mem_Init(1024) == -1) {
+    if (Mem_Init(mem_size) == -1) {
         printf("ERROR: Could not Mem_Init.\n");
         exit(EXIT_FAILURE);
     }
