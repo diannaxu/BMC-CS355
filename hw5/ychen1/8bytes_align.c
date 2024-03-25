@@ -13,7 +13,8 @@ int main(){
         printf("Failed to initialize\n");
         exit(EXIT_FAILURE);
     }
-
+    Mem_Dump();
+    
     printf("\nTesting 8-byte alignment\n");
     void* ptr1 = Mem_Alloc(1);
     if(m_error==E_NO_SPACE){
