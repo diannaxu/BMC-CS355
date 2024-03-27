@@ -1,0 +1,9 @@
+random.c checks performance for a pseudo-random sequence of allocs/frees.
+
+For example, tests can be set to run with the following arguments and with timeout set to a certain multiples of malloc. In other words, replace all Mem_Alloc and Mem_Free calls with malloc and free, time the run, then run with yours and compare. In the past, 50 times malloc's time is acceptable, although malloc gets faster every year and with every new kernel release, so the exact multiples is still to be determined. 
+
+random 0 100 0
+random 0 1000 1
+random 0 100000 1
+random 0 500000 1
+random 0 2000000 0
