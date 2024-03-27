@@ -10,8 +10,9 @@
  * Success: Aligned allocations test passed!
  */
 
-#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
 #include <stdbool.h>
 
 #include "mem.h"

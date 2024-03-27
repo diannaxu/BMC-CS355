@@ -10,8 +10,9 @@
  * Success: 8-byte alignment test passed!
  */
 
-#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
 
 #include "mem.h"
 
