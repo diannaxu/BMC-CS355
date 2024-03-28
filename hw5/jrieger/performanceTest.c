@@ -3,7 +3,7 @@
 #include <time.h>
 #include "mem.h"
 
-#define NUM_ITERATIONS 2000000
+#define NUM_ITERATIONS 200000000
 
 int main() {
     // Initialize memory region
