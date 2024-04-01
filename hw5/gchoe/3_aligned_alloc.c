@@ -26,7 +26,7 @@ void aligned_allocs() {
         ptr[i] = Mem_Alloc(3);
         
         // Check alignment of the pointer
-        if ((uintptr_t)ptr % 3 != 0) {
+        if ((uintptr_t)ptr[i] % 3 != 0) {
             success = false;
         }
 
