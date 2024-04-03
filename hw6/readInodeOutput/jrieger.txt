@@ -1,5 +1,7 @@
 Inode region starts at byte offset: 1024
 
+This print continues from Inode 0 to Inode 52421, for the later i-nodes the output starts becoming garbage numbers
+
 Inode 0:
 Next inode: 0
 Protect: 0
