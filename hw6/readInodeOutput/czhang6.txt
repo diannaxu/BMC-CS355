@@ -1,0 +1,500 @@
+=== Inode Contents (Summary at Bottom) ===
+Inode #0:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 93821
+User ID: 18390
+Group ID: 9921
+Change Time: 536561894
+Modification Time: 609329799
+Access Time: 502539239
+Data Blocks:
+        DBlock[0]: 1120
+        DBlock[1]: 8393
+        DBlock[2]: 1579
+        DBlock[3]: 9539
+        DBlock[4]: 7108
+        DBlock[5]: 7883
+        DBlock[6]: 4762
+        DBlock[7]: 1980
+        DBlock[8]: 1030
+        DBlock[9]: 8610
+Indirect Blocks:
+        IBlock[0]: 4500
+        IBlock[1]: 3711
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #1:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 181905
+User ID: 18390
+Group ID: 9921
+Change Time: 1800145544
+Modification Time: 839749086
+Access Time: 1684302434
+Data Blocks:
+        DBlock[0]: 3830
+        DBlock[1]: 2687
+        DBlock[2]: 4963
+        DBlock[3]: 2929
+        DBlock[4]: 4463
+        DBlock[5]: 9865
+        DBlock[6]: 5972
+        DBlock[7]: 4996
+        DBlock[8]: 179
+        DBlock[9]: 9419
+Indirect Blocks:
+        IBlock[0]: 1082
+        IBlock[1]: 9196
+        IBlock[2]: 4895
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #2:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 42284
+User ID: 18390
+Group ID: 9921
+Change Time: 581090236
+Modification Time: 1403568088
+Access Time: 1274429130
+Data Blocks:
+        DBlock[0]: 4008
+        DBlock[1]: 1963
+        DBlock[2]: 5253
+        DBlock[3]: 8446
+        DBlock[4]: 6304
+        DBlock[5]: 9449
+        DBlock[6]: 796
+        DBlock[7]: 7281
+        DBlock[8]: 3164
+        DBlock[9]: 9751
+Indirect Blocks:
+        IBlock[0]: 9672
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #3:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 346
+User ID: 18390
+Group ID: 9921
+Change Time: 677139821
+Modification Time: 388682480
+Access Time: 215958763
+Data Blocks:
+        DBlock[0]: 8760
+        DBlock[1]: 0
+        DBlock[2]: 0
+        DBlock[3]: 0
+        DBlock[4]: 0
+        DBlock[5]: 0
+        DBlock[6]: 0
+        DBlock[7]: 0
+        DBlock[8]: 0
+        DBlock[9]: 0
+Indirect Blocks:
+        IBlock[0]: 0
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #4:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 10758
+User ID: 18390
+Group ID: 9921
+Change Time: 851491514
+Modification Time: 1791460552
+Access Time: 1991028429
+Data Blocks:
+        DBlock[0]: 2886
+        DBlock[1]: 8305
+        DBlock[2]: 10049
+        DBlock[3]: 4425
+        DBlock[4]: 2751
+        DBlock[5]: 3056
+        DBlock[6]: 10010
+        DBlock[7]: 9880
+        DBlock[8]: 8539
+        DBlock[9]: 2945
+Indirect Blocks:
+        IBlock[0]: 5221
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #5:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 16964
+User ID: 18390
+Group ID: 9921
+Change Time: 289780933
+Modification Time: 1783691099
+Access Time: 1488850605
+Data Blocks:
+        DBlock[0]: 464
+        DBlock[1]: 3394
+        DBlock[2]: 3714
+        DBlock[3]: 1947
+        DBlock[4]: 3382
+        DBlock[5]: 9122
+        DBlock[6]: 2468
+        DBlock[7]: 5450
+        DBlock[8]: 9548
+        DBlock[9]: 930
+Indirect Blocks:
+        IBlock[0]: 9695
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #7:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 2324
+User ID: 18390
+Group ID: 9921
+Change Time: 484609576
+Modification Time: 301364203
+Access Time: 1799293787
+Data Blocks:
+        DBlock[0]: 1204
+        DBlock[1]: 866
+        DBlock[2]: 4000
+        DBlock[3]: 2590
+        DBlock[4]: 9027
+        DBlock[5]: 0
+        DBlock[6]: 0
+        DBlock[7]: 0
+        DBlock[8]: 0
+        DBlock[9]: 0
+Indirect Blocks:
+        IBlock[0]: 0
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #8:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 15164
+User ID: 18390
+Group ID: 9921
+Change Time: 861855779
+Modification Time: 1495993190
+Access Time: 677020664
+Data Blocks:
+        DBlock[0]: 8728
+        DBlock[1]: 9118
+        DBlock[2]: 5433
+        DBlock[3]: 3180
+        DBlock[4]: 370
+        DBlock[5]: 4347
+        DBlock[6]: 9867
+        DBlock[7]: 8600
+        DBlock[8]: 3608
+        DBlock[9]: 2878
+Indirect Blocks:
+        IBlock[0]: 8209
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #10:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 21851
+User ID: 18390
+Group ID: 9921
+Change Time: 159639465
+Modification Time: 712955856
+Access Time: 567770645
+Data Blocks:
+        DBlock[0]: 2682
+        DBlock[1]: 4042
+        DBlock[2]: 2440
+        DBlock[3]: 1527
+        DBlock[4]: 801
+        DBlock[5]: 3031
+        DBlock[6]: 6162
+        DBlock[7]: 5723
+        DBlock[8]: 5850
+        DBlock[9]: 7954
+Indirect Blocks:
+        IBlock[0]: 10071
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #11:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 20024
+User ID: 18390
+Group ID: 9921
+Change Time: 527743760
+Modification Time: 733695875
+Access Time: 1567008878
+Data Blocks:
+        DBlock[0]: 8194
+        DBlock[1]: 9646
+        DBlock[2]: 367
+        DBlock[3]: 7806
+        DBlock[4]: 8800
+        DBlock[5]: 7784
+        DBlock[6]: 4264
+        DBlock[7]: 5248
+        DBlock[8]: 3437
+        DBlock[9]: 7172
+Indirect Blocks:
+        IBlock[0]: 4868
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #12:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 86
+User ID: 18390
+Group ID: 9921
+Change Time: 551005105
+Modification Time: 1947867071
+Access Time: 58179161
+Data Blocks:
+        DBlock[0]: 6752
+        DBlock[1]: 0
+        DBlock[2]: 0
+        DBlock[3]: 0
+        DBlock[4]: 0
+        DBlock[5]: 0
+        DBlock[6]: 0
+        DBlock[7]: 0
+        DBlock[8]: 0
+        DBlock[9]: 0
+Indirect Blocks:
+        IBlock[0]: 0
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #13:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 229944
+User ID: 18390
+Group ID: 9921
+Change Time: 1153579291
+Modification Time: 621662272
+Access Time: 2045539985
+Data Blocks:
+        DBlock[0]: 5271
+        DBlock[1]: 2605
+        DBlock[2]: 7348
+        DBlock[3]: 1198
+        DBlock[4]: 2177
+        DBlock[5]: 5653
+        DBlock[6]: 4148
+        DBlock[7]: 7403
+        DBlock[8]: 278
+        DBlock[9]: 7879
+Indirect Blocks:
+        IBlock[0]: 216
+        IBlock[1]: 8872
+        IBlock[2]: 9470
+        IBlock[3]: 1494
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #15:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 1273
+User ID: 18390
+Group ID: 9921
+Change Time: 365843202
+Modification Time: 1203430068
+Access Time: 66029316
+Data Blocks:
+        DBlock[0]: 3223
+        DBlock[1]: 5499
+        DBlock[2]: 6493
+        DBlock[3]: 0
+        DBlock[4]: 0
+        DBlock[5]: 0
+        DBlock[6]: 0
+        DBlock[7]: 0
+        DBlock[8]: 0
+        DBlock[9]: 0
+Indirect Blocks:
+        IBlock[0]: 0
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #16:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 4002
+User ID: 18390
+Group ID: 9921
+Change Time: 805419527
+Modification Time: 510768439
+Access Time: 1349354673
+Data Blocks:
+        DBlock[0]: 10076
+        DBlock[1]: 8377
+        DBlock[2]: 3067
+        DBlock[3]: 6944
+        DBlock[4]: 7443
+        DBlock[5]: 5848
+        DBlock[6]: 2211
+        DBlock[7]: 9048
+        DBlock[8]: 0
+        DBlock[9]: 0
+Indirect Blocks:
+        IBlock[0]: 0
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #17:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 1956
+User ID: 18390
+Group ID: 9921
+Change Time: 1764889125
+Modification Time: 879318430
+Access Time: 1737407948
+Data Blocks:
+        DBlock[0]: 4740
+        DBlock[1]: 4955
+        DBlock[2]: 6638
+        DBlock[3]: 3373
+        DBlock[4]: 0
+        DBlock[5]: 0
+        DBlock[6]: 0
+        DBlock[7]: 0
+        DBlock[8]: 0
+        DBlock[9]: 0
+Indirect Blocks:
+        IBlock[0]: 0
+        IBlock[1]: 0
+        IBlock[2]: 0
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #18:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 250637
+User ID: 18390
+Group ID: 9921
+Change Time: 1368303842
+Modification Time: 460349002
+Access Time: 504627455
+Data Blocks:
+        DBlock[0]: 6894
+        DBlock[1]: 6542
+        DBlock[2]: 2034
+        DBlock[3]: 5260
+        DBlock[4]: 4917
+        DBlock[5]: 3234
+        DBlock[6]: 9581
+        DBlock[7]: 7611
+        DBlock[8]: 2609
+        DBlock[9]: 2502
+Indirect Blocks:
+        IBlock[0]: 1711
+        IBlock[1]: 8200
+        IBlock[2]: 1674
+        IBlock[3]: 7023
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Inode #19:
+Next Inode: 0
+Protection Field: 0
+Number of Links: 1
+Size: 184059
+User ID: 18390
+Group ID: 9921
+Change Time: 1178053784
+Modification Time: 1534755217
+Access Time: 773242642
+Data Blocks:
+        DBlock[0]: 2358
+        DBlock[1]: 374
+        DBlock[2]: 8994
+        DBlock[3]: 7551
+        DBlock[4]: 3648
+        DBlock[5]: 2304
+        DBlock[6]: 545
+        DBlock[7]: 3312
+        DBlock[8]: 6085
+        DBlock[9]: 8122
+Indirect Blocks:
+        IBlock[0]: 10017
+        IBlock[1]: 8285
+        IBlock[2]: 3724
+        IBlock[3]: 0
+Doubly Indirect Block: 0
+Triply Indirect Block: 0
+------------------------
+Summary: 
+Inode Region Starts: 1024
+Inode Region Ends: 3072
+Number of Valid Inodes: 17
+Number of Free Inodes: 4
+Number of Total Inodes: 21

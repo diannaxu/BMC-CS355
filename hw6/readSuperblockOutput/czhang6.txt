@@ -1,0 +1,7 @@
+=== Superblock Contents ===
+Size: 512
+Inode Offset: 0
+Data Offset: 4
+Swap Offset: 10239
+Free Inode: 14
+Free Block: 10133
