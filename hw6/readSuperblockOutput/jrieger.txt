@@ -1,5 +1,3 @@
-My read_superblock() outputs:
-
 Size of blocks in bytes: 512
 Offset of inode region in blocks: 0
 Data region offset in blocks: 4
