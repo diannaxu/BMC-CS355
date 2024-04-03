@@ -8,6 +8,20 @@ Owner's group ID: 9921
 Change time: 536561894
 Modification time: 609329799
 Access time: 502539239
+DBLOCK[i]: 1120
+DBLOCK[i]: 8393
+DBLOCK[i]: 1579
+DBLOCK[i]: 9539
+DBLOCK[i]: 7108
+DBLOCK[i]: 7883
+DBLOCK[i]: 4762
+DBLOCK[i]: 1980
+DBLOCK[i]: 1030
+DBLOCK[i]: 8610
+IBLOCK[i]: 4500
+IBLOCK[i]: 3711
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 1:
 Next inode: 0
@@ -19,6 +33,20 @@ Owner's group ID: 9921
 Change time: 1800145544
 Modification time: 839749086
 Access time: 1684302434
+DBLOCK[i]: 3830
+DBLOCK[i]: 2687
+DBLOCK[i]: 4963
+DBLOCK[i]: 2929
+DBLOCK[i]: 4463
+DBLOCK[i]: 9865
+DBLOCK[i]: 5972
+DBLOCK[i]: 4996
+DBLOCK[i]: 179
+DBLOCK[i]: 9419
+IBLOCK[i]: 1082
+IBLOCK[i]: 9196
+IBLOCK[i]: 4895
+IBLOCK[i]: 0
 
 Inode 2:
 Next inode: 0
@@ -30,6 +58,20 @@ Owner's group ID: 9921
 Change time: 581090236
 Modification time: 1403568088
 Access time: 1274429130
+DBLOCK[i]: 4008
+DBLOCK[i]: 1963
+DBLOCK[i]: 5253
+DBLOCK[i]: 8446
+DBLOCK[i]: 6304
+DBLOCK[i]: 9449
+DBLOCK[i]: 796
+DBLOCK[i]: 7281
+DBLOCK[i]: 3164
+DBLOCK[i]: 9751
+IBLOCK[i]: 9672
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 3:
 Next inode: 0
@@ -41,6 +83,20 @@ Owner's group ID: 9921
 Change time: 677139821
 Modification time: 388682480
 Access time: 215958763
+DBLOCK[i]: 8760
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 4:
 Next inode: 0
@@ -52,6 +108,20 @@ Owner's group ID: 9921
 Change time: 851491514
 Modification time: 1791460552
 Access time: 1991028429
+DBLOCK[i]: 2886
+DBLOCK[i]: 8305
+DBLOCK[i]: 10049
+DBLOCK[i]: 4425
+DBLOCK[i]: 2751
+DBLOCK[i]: 3056
+DBLOCK[i]: 10010
+DBLOCK[i]: 9880
+DBLOCK[i]: 8539
+DBLOCK[i]: 2945
+IBLOCK[i]: 5221
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 5:
 Next inode: 0
@@ -63,6 +133,20 @@ Owner's group ID: 9921
 Change time: 289780933
 Modification time: 1783691099
 Access time: 1488850605
+DBLOCK[i]: 464
+DBLOCK[i]: 3394
+DBLOCK[i]: 3714
+DBLOCK[i]: 1947
+DBLOCK[i]: 3382
+DBLOCK[i]: 9122
+DBLOCK[i]: 2468
+DBLOCK[i]: 5450
+DBLOCK[i]: 9548
+DBLOCK[i]: 930
+IBLOCK[i]: 9695
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 7:
 Next inode: 0
@@ -74,6 +158,20 @@ Owner's group ID: 9921
 Change time: 484609576
 Modification time: 301364203
 Access time: 1799293787
+DBLOCK[i]: 1204
+DBLOCK[i]: 866
+DBLOCK[i]: 4000
+DBLOCK[i]: 2590
+DBLOCK[i]: 9027
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 8:
 Next inode: 0
@@ -85,6 +183,20 @@ Owner's group ID: 9921
 Change time: 861855779
 Modification time: 1495993190
 Access time: 677020664
+DBLOCK[i]: 8728
+DBLOCK[i]: 9118
+DBLOCK[i]: 5433
+DBLOCK[i]: 3180
+DBLOCK[i]: 370
+DBLOCK[i]: 4347
+DBLOCK[i]: 9867
+DBLOCK[i]: 8600
+DBLOCK[i]: 3608
+DBLOCK[i]: 2878
+IBLOCK[i]: 8209
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 10:
 Next inode: 0
@@ -96,6 +208,20 @@ Owner's group ID: 9921
 Change time: 159639465
 Modification time: 712955856
 Access time: 567770645
+DBLOCK[i]: 2682
+DBLOCK[i]: 4042
+DBLOCK[i]: 2440
+DBLOCK[i]: 1527
+DBLOCK[i]: 801
+DBLOCK[i]: 3031
+DBLOCK[i]: 6162
+DBLOCK[i]: 5723
+DBLOCK[i]: 5850
+DBLOCK[i]: 7954
+IBLOCK[i]: 10071
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 11:
 Next inode: 0
@@ -107,6 +233,20 @@ Owner's group ID: 9921
 Change time: 527743760
 Modification time: 733695875
 Access time: 1567008878
+DBLOCK[i]: 8194
+DBLOCK[i]: 9646
+DBLOCK[i]: 367
+DBLOCK[i]: 7806
+DBLOCK[i]: 8800
+DBLOCK[i]: 7784
+DBLOCK[i]: 4264
+DBLOCK[i]: 5248
+DBLOCK[i]: 3437
+DBLOCK[i]: 7172
+IBLOCK[i]: 4868
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 12:
 Next inode: 0
@@ -118,6 +258,20 @@ Owner's group ID: 9921
 Change time: 551005105
 Modification time: 1947867071
 Access time: 58179161
+DBLOCK[i]: 6752
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 13:
 Next inode: 0
@@ -129,6 +283,20 @@ Owner's group ID: 9921
 Change time: 1153579291
 Modification time: 621662272
 Access time: 2045539985
+DBLOCK[i]: 5271
+DBLOCK[i]: 2605
+DBLOCK[i]: 7348
+DBLOCK[i]: 1198
+DBLOCK[i]: 2177
+DBLOCK[i]: 5653
+DBLOCK[i]: 4148
+DBLOCK[i]: 7403
+DBLOCK[i]: 278
+DBLOCK[i]: 7879
+IBLOCK[i]: 216
+IBLOCK[i]: 8872
+IBLOCK[i]: 9470
+IBLOCK[i]: 1494
 
 Inode 15:
 Next inode: 0
@@ -140,6 +308,20 @@ Owner's group ID: 9921
 Change time: 365843202
 Modification time: 1203430068
 Access time: 66029316
+DBLOCK[i]: 3223
+DBLOCK[i]: 5499
+DBLOCK[i]: 6493
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 16:
 Next inode: 0
@@ -151,6 +333,20 @@ Owner's group ID: 9921
 Change time: 805419527
 Modification time: 510768439
 Access time: 1349354673
+DBLOCK[i]: 10076
+DBLOCK[i]: 8377
+DBLOCK[i]: 3067
+DBLOCK[i]: 6944
+DBLOCK[i]: 7443
+DBLOCK[i]: 5848
+DBLOCK[i]: 2211
+DBLOCK[i]: 9048
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 17:
 Next inode: 0
@@ -162,6 +358,20 @@ Owner's group ID: 9921
 Change time: 1764889125
 Modification time: 879318430
 Access time: 1737407948
+DBLOCK[i]: 4740
+DBLOCK[i]: 4955
+DBLOCK[i]: 6638
+DBLOCK[i]: 3373
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+DBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
+IBLOCK[i]: 0
 
 Inode 18:
 Next inode: 0
@@ -173,6 +383,20 @@ Owner's group ID: 9921
 Change time: 1368303842
 Modification time: 460349002
 Access time: 504627455
+DBLOCK[i]: 6894
+DBLOCK[i]: 6542
+DBLOCK[i]: 2034
+DBLOCK[i]: 5260
+DBLOCK[i]: 4917
+DBLOCK[i]: 3234
+DBLOCK[i]: 9581
+DBLOCK[i]: 7611
+DBLOCK[i]: 2609
+DBLOCK[i]: 2502
+IBLOCK[i]: 1711
+IBLOCK[i]: 8200
+IBLOCK[i]: 1674
+IBLOCK[i]: 7023
 
 Inode 19:
 Next inode: 0
@@ -184,3 +408,17 @@ Owner's group ID: 9921
 Change time: 1178053784
 Modification time: 1534755217
 Access time: 773242642
+DBLOCK[i]: 2358
+DBLOCK[i]: 374
+DBLOCK[i]: 8994
+DBLOCK[i]: 7551
+DBLOCK[i]: 3648
+DBLOCK[i]: 2304
+DBLOCK[i]: 545
+DBLOCK[i]: 3312
+DBLOCK[i]: 6085
+DBLOCK[i]: 8122
+IBLOCK[i]: 10017
+IBLOCK[i]: 8285
+IBLOCK[i]: 3724
+IBLOCK[i]: 0
