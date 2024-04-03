@@ -1,0 +1,1 @@
+My attempt at reading all the data blocks from the first inode in the disk into a binary file, output.bin
