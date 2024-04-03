@@ -1,0 +1,6 @@
+Superblock size: 512
+Inode offset: 0
+Data region offset: 4
+Swap region offset: 10239
+Free inode list: 14
+Free block list: 10133
