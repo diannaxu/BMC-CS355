@@ -1,0 +1,3 @@
+gdb's "print my_superblock" output:
+
+{size = 512, inode_offset = 0, data_offset = 4, swap_offset = 10239, free_inode = 14, free_block = 10133}
