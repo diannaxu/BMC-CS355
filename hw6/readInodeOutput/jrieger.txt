@@ -1,6 +1,3 @@
-Inode region starts at byte offset: 1024
-Number of free blocks on the disk: 5
-
 Inode 0:
 Next inode: 0
 Protect: 0
