@@ -1,5 +1,5 @@
 Inode region starts at byte offset: 1024
-
+Number of free blocks on the disk: 5
 This print continues from Inode 0 to Inode 52421, for the later i-nodes the output starts becoming garbage numbers
 
 Inode 0:
