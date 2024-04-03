@@ -1,0 +1,96 @@
+inodes (output of gdb):
+
+(gdb) print number_of_inodes
+$1 = 20
+
+(gdb) print inode_array[0]
+$2 = {next_inode = 0, protect = 0, nlink = 1, size = 93821, uid = 18390, gid = 9921, ctime = 536561894, mtime = 609329799, 
+  atime = 502539239, dblocks = {1120, 8393, 1579, 9539, 7108, 7883, 4762, 1980, 1030, 8610}, iblocks = {4500, 3711, 0, 0}, 
+  i2block = 0, i3block = 0}
+
+(gdb) print inode_array[1]
+$3 = {next_inode = 0, protect = 0, nlink = 1, size = 181905, uid = 18390, gid = 9921, ctime = 1800145544, mtime = 839749086, 
+  atime = 1684302434, dblocks = {3830, 2687, 4963, 2929, 4463, 9865, 5972, 4996, 179, 9419}, iblocks = {1082, 9196, 4895, 0}, 
+  i2block = 0, i3block = 0}
+
+(gdb) print inode_array[2]
+$4 = {next_inode = 0, protect = 0, nlink = 1, size = 42284, uid = 18390, gid = 9921, ctime = 581090236, mtime = 1403568088, 
+  atime = 1274429130, dblocks = {4008, 1963, 5253, 8446, 6304, 9449, 796, 7281, 3164, 9751}, iblocks = {9672, 0, 0, 0}, i2block = 0, 
+  i3block = 0}
+
+(gdb) print inode_array[3]
+$5 = {next_inode = 0, protect = 0, nlink = 1, size = 346, uid = 18390, gid = 9921, ctime = 677139821, mtime = 388682480, 
+  atime = 215958763, dblocks = {8760, 0, 0, 0, 0, 0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[4]
+$6 = {next_inode = 0, protect = 0, nlink = 1, size = 10758, uid = 18390, gid = 9921, ctime = 851491514, mtime = 1791460552, 
+  atime = 1991028429, dblocks = {2886, 8305, 10049, 4425, 2751, 3056, 10010, 9880, 8539, 2945}, iblocks = {5221, 0, 0, 0}, 
+  i2block = 0, i3block = 0}
+
+(gdb) print inode_array[5]
+$7 = {next_inode = 0, protect = 0, nlink = 1, size = 16964, uid = 18390, gid = 9921, ctime = 289780933, mtime = 1783691099, 
+  atime = 1488850605, dblocks = {464, 3394, 3714, 1947, 3382, 9122, 2468, 5450, 9548, 930}, iblocks = {9695, 0, 0, 0}, i2block = 0, 
+  i3block = 0}
+
+(gdb) print inode_array[6]
+$8 = {next_inode = -1, protect = 0, nlink = 0, size = 0, uid = 0, gid = 0, ctime = 0, mtime = 0, atime = 0, dblocks = {0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[7]
+$9 = {next_inode = 0, protect = 0, nlink = 1, size = 2324, uid = 18390, gid = 9921, ctime = 484609576, mtime = 301364203, 
+  atime = 1799293787, dblocks = {1204, 866, 4000, 2590, 9027, 0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[8]
+$10 = {next_inode = 0, protect = 0, nlink = 1, size = 15164, uid = 18390, gid = 9921, ctime = 861855779, mtime = 1495993190, 
+  atime = 677020664, dblocks = {8728, 9118, 5433, 3180, 370, 4347, 9867, 8600, 3608, 2878}, iblocks = {8209, 0, 0, 0}, i2block = 0, 
+  i3block = 0}
+
+(gdb) print inode_array[9]
+$11 = {next_inode = 6, protect = 0, nlink = 0, size = 0, uid = 0, gid = 0, ctime = 0, mtime = 0, atime = 0, dblocks = {0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[10]
+$12 = {next_inode = 0, protect = 0, nlink = 1, size = 21851, uid = 18390, gid = 9921, ctime = 159639465, mtime = 712955856, 
+  atime = 567770645, dblocks = {2682, 4042, 2440, 1527, 801, 3031, 6162, 5723, 5850, 7954}, iblocks = {10071, 0, 0, 0}, i2block = 0, 
+  i3block = 0}
+
+(gdb) print inode_array[11]
+$13 = {next_inode = 0, protect = 0, nlink = 1, size = 20024, uid = 18390, gid = 9921, ctime = 527743760, mtime = 733695875, 
+  atime = 1567008878, dblocks = {8194, 9646, 367, 7806, 8800, 7784, 4264, 5248, 3437, 7172}, iblocks = {4868, 0, 0, 0}, i2block = 0, 
+  i3block = 0}
+
+(gdb) print inode_array[12]
+$14 = {next_inode = 0, protect = 0, nlink = 1, size = 86, uid = 18390, gid = 9921, ctime = 551005105, mtime = 1947867071, 
+  atime = 58179161, dblocks = {6752, 0, 0, 0, 0, 0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[13]
+$15 = {next_inode = 0, protect = 0, nlink = 1, size = 229944, uid = 18390, gid = 9921, ctime = 1153579291, mtime = 621662272, 
+  atime = 2045539985, dblocks = {5271, 2605, 7348, 1198, 2177, 5653, 4148, 7403, 278, 7879}, iblocks = {216, 8872, 9470, 1494}, 
+  i2block = 0, i3block = 0}
+
+(gdb) print inode_array[14]
+$16 = {next_inode = 9, protect = 0, nlink = 0, size = 0, uid = 0, gid = 0, ctime = 0, mtime = 0, atime = 0, dblocks = {0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[15]
+$17 = {next_inode = 0, protect = 0, nlink = 1, size = 1273, uid = 18390, gid = 9921, ctime = 365843202, mtime = 1203430068, 
+  atime = 66029316, dblocks = {3223, 5499, 6493, 0, 0, 0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[16]
+$18 = {next_inode = 0, protect = 0, nlink = 1, size = 4002, uid = 18390, gid = 9921, ctime = 805419527, mtime = 510768439, 
+  atime = 1349354673, dblocks = {10076, 8377, 3067, 6944, 7443, 5848, 2211, 9048, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, 
+  i3block = 0}
+
+(gdb) print inode_array[17]
+$19 = {next_inode = 0, protect = 0, nlink = 1, size = 1956, uid = 18390, gid = 9921, ctime = 1764889125, mtime = 879318430, 
+  atime = 1737407948, dblocks = {4740, 4955, 6638, 3373, 0, 0, 0, 0, 0, 0}, iblocks = {0, 0, 0, 0}, i2block = 0, i3block = 0}
+
+(gdb) print inode_array[18]
+$20 = {next_inode = 0, protect = 0, nlink = 1, size = 250637, uid = 18390, gid = 9921, ctime = 1368303842, mtime = 460349002, 
+  atime = 504627455, dblocks = {6894, 6542, 2034, 5260, 4917, 3234, 9581, 7611, 2609, 2502}, iblocks = {1711, 8200, 1674, 7023}, 
+  i2block = 0, i3block = 0}
+
+(gdb) print inode_array[19]
+$21 = {next_inode = 0, protect = 0, nlink = 1, size = 184059, uid = 18390, gid = 9921, ctime = 1178053784, mtime = 1534755217, 
+  atime = 773242642, dblocks = {2358, 374, 8994, 7551, 3648, 2304, 545, 3312, 6085, 8122}, iblocks = {10017, 8285, 3724, 0}, 
+  i2block = 0, i3block = 0}
