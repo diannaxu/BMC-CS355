@@ -1,0 +1,326 @@
+### Files:
+cnguyen_defrag: my disk after defragmentation
+
+### Note:
+Indirect block pointers are put right after indirect data blocks
+
+For example, inode 0 takes 184 datablocks + 2 block pointers (142, 189)
+
+Direct Blocks:
+4 5 6 7 8 9 10 11 12 13 
+Indirect Blocks:
+142 189 0 0 
+
+This means that pointer 142 points to blocks 14->141, pointer 189 points to blocks 143->188
+
+### Disk Info After Defrag:
+- Number of datablocks: 2114
+- Number of indirect pointers: 22
+- Number of freeblocks: 8100
+- Head of free block list: 2140
+
+### Disk Layout: 
+- Boot
+- Superblock
+- Inode: block 0 -> 4
+- Data Blocks: block 4 -> 2140
+- Free Blocks: block 2140 -> 10239
+- Swap Region
+
+### Superblock and Inodes Info:
+SUPERBLOCK INFO
+Size: 512
+Inode Offset: 0
+Data Offset: 4
+Swap Offset: 10239
+Free Inode: 14
+Free Block: 2140
+
+INODE 0
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 93821
+User ID: 18390
+Group ID: 9921
+Change Time: 536561894
+Modification Time: 609329799
+Access Time: 502539239
+Direct Blocks:
+4 5 6 7 8 9 10 11 12 13 
+Indirect Blocks:
+142 189 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 1
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 181905
+User ID: 18390
+Group ID: 9921
+Change Time: 1800145544
+Modification Time: 839749086
+Access Time: 1684302434
+Direct Blocks:
+190 191 192 193 194 195 196 197 198 199 
+Indirect Blocks:
+328 457 548 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 2
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 42284
+User ID: 18390
+Group ID: 9921
+Change Time: 581090236
+Modification Time: 1403568088
+Access Time: 1274429130
+Direct Blocks:
+549 550 551 552 553 554 555 556 557 558 
+Indirect Blocks:
+632 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 3
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 346
+User ID: 18390
+Group ID: 9921
+Change Time: 677139821
+Modification Time: 388682480
+Access Time: 215958763
+Direct Blocks:
+633 0 0 0 0 0 0 0 0 0 
+Indirect Blocks:
+0 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 4
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 10758
+User ID: 18390
+Group ID: 9921
+Change Time: 851491514
+Modification Time: 1791460552
+Access Time: 1991028429
+Direct Blocks:
+634 635 636 637 638 639 640 641 642 643 
+Indirect Blocks:
+656 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 5
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 16964
+User ID: 18390
+Group ID: 9921
+Change Time: 289780933
+Modification Time: 1783691099
+Access Time: 1488850605
+Direct Blocks:
+657 658 659 660 661 662 663 664 665 666 
+Indirect Blocks:
+691 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 7
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 2324
+User ID: 18390
+Group ID: 9921
+Change Time: 484609576
+Modification Time: 301364203
+Access Time: 1799293787
+Direct Blocks:
+692 693 694 695 696 0 0 0 0 0 
+Indirect Blocks:
+0 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 8
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 15164
+User ID: 18390
+Group ID: 9921
+Change Time: 861855779
+Modification Time: 1495993190
+Access Time: 677020664
+Direct Blocks:
+697 698 699 700 701 702 703 704 705 706 
+Indirect Blocks:
+727 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 10
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 21851
+User ID: 18390
+Group ID: 9921
+Change Time: 159639465
+Modification Time: 712955856
+Access Time: 567770645
+Direct Blocks:
+728 729 730 731 732 733 734 735 736 737 
+Indirect Blocks:
+771 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 11
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 20024
+User ID: 18390
+Group ID: 9921
+Change Time: 527743760
+Modification Time: 733695875
+Access Time: 1567008878
+Direct Blocks:
+772 773 774 775 776 777 778 779 780 781 
+Indirect Blocks:
+812 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 12
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 86
+User ID: 18390
+Group ID: 9921
+Change Time: 551005105
+Modification Time: 1947867071
+Access Time: 58179161
+Direct Blocks:
+813 0 0 0 0 0 0 0 0 0 
+Indirect Blocks:
+0 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 13
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 229944
+User ID: 18390
+Group ID: 9921
+Change Time: 1153579291
+Modification Time: 621662272
+Access Time: 2045539985
+Direct Blocks:
+814 815 816 817 818 819 820 821 822 823 
+Indirect Blocks:
+952 1081 1210 1267 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 15
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 1273
+User ID: 18390
+Group ID: 9921
+Change Time: 365843202
+Modification Time: 1203430068
+Access Time: 66029316
+Direct Blocks:
+1268 1269 1270 0 0 0 0 0 0 0 
+Indirect Blocks:
+0 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 16
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 4002
+User ID: 18390
+Group ID: 9921
+Change Time: 805419527
+Modification Time: 510768439
+Access Time: 1349354673
+Direct Blocks:
+1271 1272 1273 1274 1275 1276 1277 1278 0 0 
+Indirect Blocks:
+0 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 17
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 1956
+User ID: 18390
+Group ID: 9921
+Change Time: 1764889125
+Modification Time: 879318430
+Access Time: 1737407948
+Direct Blocks:
+1279 1280 1281 1282 0 0 0 0 0 0 
+Indirect Blocks:
+0 0 0 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 18
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 250637
+User ID: 18390
+Group ID: 9921
+Change Time: 1368303842
+Modification Time: 460349002
+Access Time: 504627455
+Direct Blocks:
+1283 1284 1285 1286 1287 1288 1289 1290 1291 1292 
+Indirect Blocks:
+1421 1550 1679 1776 
+Double Indirect Block: 0
+Triple Indirect Block: 0
+
+INODE 19
+Next Inode: 0
+Protection: 0
+Number of Links: 1
+Size: 184059
+User ID: 18390
+Group ID: 9921
+Change Time: 1178053784
+Modification Time: 1534755217
+Access Time: 773242642
+Direct Blocks:
+1777 1778 1779 1780 1781 1782 1783 1784 1785 1786 
+Indirect Blocks:
+1915 2044 2139 0 
+Double Indirect Block: 0
+Triple Indirect Block: 0
