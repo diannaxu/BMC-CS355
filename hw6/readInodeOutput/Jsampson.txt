@@ -1,0 +1,480 @@
+Inode 0:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 93821
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 536561894
+Modification time: 609329799
+Access time: 502539239
+DBLOCK[0]: 1120
+DBLOCK[1]: 8393
+DBLOCK[2]: 1579
+DBLOCK[3]: 9539
+DBLOCK[4]: 7108
+DBLOCK[5]: 7883
+DBLOCK[6]: 4762
+DBLOCK[7]: 1980
+DBLOCK[8]: 1030
+DBLOCK[9]: 8610
+IBLOCK[0]: 4500
+IBLOCK[1]: 3711
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 1:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 181905
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 1800145544
+Modification time: 839749086
+Access time: 1684302434
+DBLOCK[0]: 3830
+DBLOCK[1]: 2687
+DBLOCK[2]: 4963
+DBLOCK[3]: 2929
+DBLOCK[4]: 4463
+DBLOCK[5]: 9865
+DBLOCK[6]: 5972
+DBLOCK[7]: 4996
+DBLOCK[8]: 179
+DBLOCK[9]: 9419
+IBLOCK[0]: 1082
+IBLOCK[1]: 9196
+IBLOCK[2]: 4895
+IBLOCK[3]: 0
+Inode 2:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 42284
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 581090236
+Modification time: 1403568088
+Access time: 1274429130
+DBLOCK[0]: 4008
+DBLOCK[1]: 1963
+DBLOCK[2]: 5253
+DBLOCK[3]: 8446
+DBLOCK[4]: 6304
+DBLOCK[5]: 9449
+DBLOCK[6]: 796
+DBLOCK[7]: 7281
+DBLOCK[8]: 3164
+DBLOCK[9]: 9751
+IBLOCK[0]: 9672
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 3:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 346
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 677139821
+Modification time: 388682480
+Access time: 215958763
+DBLOCK[0]: 8760
+DBLOCK[1]: 0
+DBLOCK[2]: 0
+DBLOCK[3]: 0
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 4:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 10758
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 851491514
+Modification time: 1791460552
+Access time: 1991028429
+DBLOCK[0]: 2886
+DBLOCK[1]: 8305
+DBLOCK[2]: 10049
+DBLOCK[3]: 4425
+DBLOCK[4]: 2751
+DBLOCK[5]: 3056
+DBLOCK[6]: 10010
+DBLOCK[7]: 9880
+DBLOCK[8]: 8539
+DBLOCK[9]: 2945
+IBLOCK[0]: 5221
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 5:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 16964
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 289780933
+Modification time: 1783691099
+Access time: 1488850605
+DBLOCK[0]: 464
+DBLOCK[1]: 3394
+DBLOCK[2]: 3714
+DBLOCK[3]: 1947
+DBLOCK[4]: 3382
+DBLOCK[5]: 9122
+DBLOCK[6]: 2468
+DBLOCK[7]: 5450
+DBLOCK[8]: 9548
+DBLOCK[9]: 930
+IBLOCK[0]: 9695
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 6:
+Next inode: -1
+Protect: 0
+Number of links: 0
+Size: 0
+Owner's user ID: 0
+Owner's group ID: 0
+Change time: 0
+Modification time: 0
+Access time: 0
+DBLOCK[0]: 0
+DBLOCK[1]: 0
+DBLOCK[2]: 0
+DBLOCK[3]: 0
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 7:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 2324
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 484609576
+Modification time: 301364203
+Access time: 1799293787
+DBLOCK[0]: 1204
+DBLOCK[1]: 866
+DBLOCK[2]: 4000
+DBLOCK[3]: 2590
+DBLOCK[4]: 9027
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 8:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 15164
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 861855779
+Modification time: 1495993190
+Access time: 677020664
+DBLOCK[0]: 8728
+DBLOCK[1]: 9118
+DBLOCK[2]: 5433
+DBLOCK[3]: 3180
+DBLOCK[4]: 370
+DBLOCK[5]: 4347
+DBLOCK[6]: 9867
+DBLOCK[7]: 8600
+DBLOCK[8]: 3608
+DBLOCK[9]: 2878
+IBLOCK[0]: 8209
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 9:
+Next inode: 6
+Protect: 0
+Number of links: 0
+Size: 0
+Owner's user ID: 0
+Owner's group ID: 0
+Change time: 0
+Modification time: 0
+Access time: 0
+DBLOCK[0]: 0
+DBLOCK[1]: 0
+DBLOCK[2]: 0
+DBLOCK[3]: 0
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 10:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 21851
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 159639465
+Modification time: 712955856
+Access time: 567770645
+DBLOCK[0]: 2682
+DBLOCK[1]: 4042
+DBLOCK[2]: 2440
+DBLOCK[3]: 1527
+DBLOCK[4]: 801
+DBLOCK[5]: 3031
+DBLOCK[6]: 6162
+DBLOCK[7]: 5723
+DBLOCK[8]: 5850
+DBLOCK[9]: 7954
+IBLOCK[0]: 10071
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 11:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 20024
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 527743760
+Modification time: 733695875
+Access time: 1567008878
+DBLOCK[0]: 8194
+DBLOCK[1]: 9646
+DBLOCK[2]: 367
+DBLOCK[3]: 7806
+DBLOCK[4]: 8800
+DBLOCK[5]: 7784
+DBLOCK[6]: 4264
+DBLOCK[7]: 5248
+DBLOCK[8]: 3437
+DBLOCK[9]: 7172
+IBLOCK[0]: 4868
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 12:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 86
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 551005105
+Modification time: 1947867071
+Access time: 58179161
+DBLOCK[0]: 6752
+DBLOCK[1]: 0
+DBLOCK[2]: 0
+DBLOCK[3]: 0
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 13:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 229944
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 1153579291
+Modification time: 621662272
+Access time: 2045539985
+DBLOCK[0]: 5271
+DBLOCK[1]: 2605
+DBLOCK[2]: 7348
+DBLOCK[3]: 1198
+DBLOCK[4]: 2177
+DBLOCK[5]: 5653
+DBLOCK[6]: 4148
+DBLOCK[7]: 7403
+DBLOCK[8]: 278
+DBLOCK[9]: 7879
+IBLOCK[0]: 216
+IBLOCK[1]: 8872
+IBLOCK[2]: 9470
+IBLOCK[3]: 1494
+Inode 14:
+Next inode: 9
+Protect: 0
+Number of links: 0
+Size: 0
+Owner's user ID: 0
+Owner's group ID: 0
+Change time: 0
+Modification time: 0
+Access time: 0
+DBLOCK[0]: 0
+DBLOCK[1]: 0
+DBLOCK[2]: 0
+DBLOCK[3]: 0
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 15:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 1273
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 365843202
+Modification time: 1203430068
+Access time: 66029316
+DBLOCK[0]: 3223
+DBLOCK[1]: 5499
+DBLOCK[2]: 6493
+DBLOCK[3]: 0
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 16:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 4002
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 805419527
+Modification time: 510768439
+Access time: 1349354673
+DBLOCK[0]: 10076
+DBLOCK[1]: 8377
+DBLOCK[2]: 3067
+DBLOCK[3]: 6944
+DBLOCK[4]: 7443
+DBLOCK[5]: 5848
+DBLOCK[6]: 2211
+DBLOCK[7]: 9048
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 17:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 1956
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 1764889125
+Modification time: 879318430
+Access time: 1737407948
+DBLOCK[0]: 4740
+DBLOCK[1]: 4955
+DBLOCK[2]: 6638
+DBLOCK[3]: 3373
+DBLOCK[4]: 0
+DBLOCK[5]: 0
+DBLOCK[6]: 0
+DBLOCK[7]: 0
+DBLOCK[8]: 0
+DBLOCK[9]: 0
+IBLOCK[0]: 0
+IBLOCK[1]: 0
+IBLOCK[2]: 0
+IBLOCK[3]: 0
+Inode 18:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 250637
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 1368303842
+Modification time: 460349002
+Access time: 504627455
+DBLOCK[0]: 6894
+DBLOCK[1]: 6542
+DBLOCK[2]: 2034
+DBLOCK[3]: 5260
+DBLOCK[4]: 4917
+DBLOCK[5]: 3234
+DBLOCK[6]: 9581
+DBLOCK[7]: 7611
+DBLOCK[8]: 2609
+DBLOCK[9]: 2502
+IBLOCK[0]: 1711
+IBLOCK[1]: 8200
+IBLOCK[2]: 1674
+IBLOCK[3]: 7023
+Inode 19:
+Next inode: 0
+Protect: 0
+Number of links: 1
+Size: 184059
+Owner's user ID: 18390
+Owner's group ID: 9921
+Change time: 1178053784
+Modification time: 1534755217
+Access time: 773242642
+DBLOCK[0]: 2358
+DBLOCK[1]: 374
+DBLOCK[2]: 8994
+DBLOCK[3]: 7551
+DBLOCK[4]: 3648
+DBLOCK[5]: 2304
+DBLOCK[6]: 545
+DBLOCK[7]: 3312
+DBLOCK[8]: 6085
+DBLOCK[9]: 8122
+IBLOCK[0]: 10017
+IBLOCK[1]: 8285
+IBLOCK[2]: 3724
+IBLOCK[3]: 0
